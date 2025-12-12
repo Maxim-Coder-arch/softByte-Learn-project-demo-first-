@@ -1,0 +1,718 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bungee+Spice&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Ga+Maamli&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Jockey+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lacquer&family=Lemon&family=Lilita+One&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IT+Moderna:wght@100..400&family=Poiret+One&family=Prosto+One&family=Protest+Revolution&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Rubik:ital,wght@0,300..900;1,300..900&family=Russo+One&family=Sono:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tektur:wght@400..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  text-decoration: none;
+  background-color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  width: auto;
+  padding: 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+ins,
+del {
+  text-decoration: none;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+menu,
+dir {
+  display: block;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+input[type=range] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+}
+input[type=range]::-moz-range-thumb {
+  appearance: none;
+}
+input[type=range]::-ms-thumb {
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  line-height: inherit;
+  font-family: inherit;
+}
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+.ls-fn-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.lsn-container {
+  width: 90%;
+}
+
+.lsn-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F2C06B;
+}
+
+.lsn-nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #F2C06B;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  transition: color 0.2s;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.lsn-nav-back:hover {
+  color: #F2D8A7;
+}
+
+.lsn-progress {
+  font-size: 0.9rem;
+  color: #FFFEF6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: solid 0.5px #F2D8A7;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Видео блок */
+.lsn-video-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.lsn-video {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0px 0px #7B17A6;
+  display: block;
+  width: 90%;
+  background-color: #151515;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.lsn-video:hover {
+  box-shadow: 0 0px 25px #7B17A6;
+}
+
+.lsn-material {
+  background-color: rgb(24, 24, 24);
+  border: 1px solid #0B2740;
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 40px;
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 0px 0px #7B17A6;
+}
+.lsn-material:hover {
+  box-shadow: 0 0px 15px #7B17A6;
+}
+
+.lsn-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #F2C06B;
+}
+
+.lsn-prev-btn {
+  padding: 14px 28px;
+  border: 1px solid #F2C06B;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #FFFEF6;
+}
+
+.lsn-next-btn {
+  padding: 14px 28px;
+  border: solid 1px #F2C06B;
+  color: #FFFEF6;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.lsn-finish-btn {
+  padding: 14px 28px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.lsn-finish-btn:hover {
+  background-color: #0da271;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.lsn-not-found {
+  padding: 50px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lsn-not-found-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #dc2626;
+}
+
+.lsn-back-btn {
+  color: #2563eb;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.lsn-back-btn:hover {
+  background-color: #eff6ff;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .lsn-container {
+    padding: 15px;
+  }
+  .lsn-navbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .lsn-heading {
+    font-size: 1.8rem;
+  }
+  .lsn-material {
+    padding: 25px;
+  }
+  .lsn-pagination {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .lsn-prev-btn,
+  .lsn-next-btn,
+  .lsn-finish-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .lsn-video {
+    height: 300px;
+  }
+  .lsn-heading {
+    font-size: 1.5rem;
+  }
+}
+.lsn-title {
+  color: #FFFEF6;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.lsn-description {
+  color: #FFFEF6;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lsn-content {
+  padding-top: 2rem;
+  border-top: solid 1px #13DCF2;
+  margin-top: 10px;
+}
+
+/* Добавьте в lessons.css */
+/* Общие стили для карточек */
+.lsn-cards-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.lsn-card {
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+/* Стили для карточки заголовка урока */
+.lsn-header-card {
+  background: #2d2d2d;
+  color: #FFFEF6;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.lsn-header-card .lsn-title {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.lsn-header-card .lsn-description {
+  color: #FFFEF6;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.lsn-header-card .lsn-duration {
+  color: white;
+  font-weight: 600;
+}
+
+/* Специфичные стили для разных типов карточек */
+.lsn-card-heading {
+  color: #FFFEF6;
+  border: none;
+  border-bottom: solid 1px #FFFEF6;
+}
+
+.lsn-card-heading .lsn-card-content {
+  color: white;
+}
+
+.lsn-card-text {
+  background-color: #f8f9fa;
+}
+
+.lsn-card-list {
+  border-left: 4px solid #20c997;
+}
+
+.lsn-card-quote {
+  background-color: #e9f7fe;
+  border-left: 4px solid #17a2b8;
+}
+
+.lsn-card-note {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+.lsn-card-code {
+  background-color: #1e1e1e;
+  border-left: 4px solid #343a40;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Стили для контента внутри карточек */
+.lsn-card-content {
+  width: 100%;
+}
+
+.lsn-card-heading .lsn-heading-1 {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+.lsn-card-heading .lsn-heading-2 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.lsn-card-text .lsn-text {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  color: #495057;
+}
+
+.lsn-card-list {
+  background-color: white;
+}
+
+.lsn-card-list .lsn-list-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #212529;
+}
+
+.lsn-card-list .lsn-list {
+  margin-left: 20px;
+}
+
+.lsn-card-list .lsn-list-item {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.lsn-card-quote .lsn-quote {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #212529;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.lsn-card-quote .lsn-quote p {
+  margin: 0;
+}
+
+.lsn-card-note {
+  background-color: #1f1f1f;
+}
+
+.lsn-card-note .lsn-note {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #FFFEF6;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Для сгруппированных карточек */
+.lsn-content-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  margin-bottom: 25px;
+}
+
+.lsn-content-card .lsn-card {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.lsn-content-card .lsn-card:last-child {
+  margin-bottom: 0;
+}
+
+.lsn-content-card .lsn-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Адаптивность для карточек */
+@media (max-width: 768px) {
+  .lsn-card {
+    padding: 18px;
+  }
+  .lsn-header-card {
+    padding: 24px 20px;
+  }
+  .lsn-header-card .lsn-title {
+    font-size: 28px;
+  }
+  .lsn-header-card .lsn-description {
+    font-size: 18px;
+  }
+  .lsn-card-heading .lsn-heading-1 {
+    font-size: 24px;
+  }
+  .lsn-card-heading .lsn-heading-2 {
+    font-size: 20px;
+  }
+}
+/* Исправленные стили для карточек с кодом */
+.lsn-card-code {
+  background-color: #1e1e1e;
+  border-left: 4px solid #343a40;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Убираем стандартные отступы у карточки для кода */
+.lsn-card-code .lsn-card-content {
+  padding: 0;
+}
+
+/* Переименовываем .lsn-code-container в .lsn-code-content для избежания конфликтов */
+.lsn-code-content {
+  width: 100%;
+}
+
+.lsn-code-content .lsn-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #404040;
+}
+
+.lsn-code-content .lsn-code-language {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.lsn-code-content .lsn-copy-btn {
+  background-color: #404040;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lsn-code-content .lsn-copy-btn:hover {
+  background-color: #505050;
+}
+
+.lsn-code-content .lsn-code-block {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 400px;
+}
+
+.lsn-code-content .lsn-code-block code {
+  color: #d4d4d4;
+  white-space: pre;
+  font-family: "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+}
+
+/* Базовые цвета для разных языков */
+.lsn-card-code[data-language=html] .lsn-code-language {
+  color: #e34c26;
+}
+
+.lsn-card-code[data-language=javascript] .lsn-code-language {
+  color: #f7df1e;
+}
+
+.lsn-card-code[data-language=css] .lsn-code-language {
+  color: #264de4;
+}
+
+.lsn-card-code[data-language=typescript] .lsn-code-language {
+  color: #3178c6;
+}
+
+.lsn-card-code[data-language=bash] .lsn-code-language {
+  color: #4eaa25;
+}
+
+/* Иконка для карточки с кодом */
+.lsn-card-code .lsn-card-icon {
+  background-color: #343a40;
+  z-index: 2;
+}
+
+/* Адаптивность для карточек с кодом */
+@media (max-width: 768px) {
+  .lsn-code-content .lsn-code-header {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .lsn-code-content .lsn-copy-btn {
+    align-self: flex-end;
+  }
+  .lsn-code-content .lsn-code-block {
+    padding: 16px;
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=lessons.css.map */

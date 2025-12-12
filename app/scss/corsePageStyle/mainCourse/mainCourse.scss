@@ -1,0 +1,240 @@
+@use '../reset/reset.scss' as *;
+@use '../colors/colors.scss' as *;
+@mixin font($weight) {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+body {
+    background-color: $happy-black;
+}
+.course-block {
+    width: 100vw;
+    min-height: 100vh;
+    padding: {
+        top: 3rem;
+        bottom: 3rem;
+        left: 2rem;
+        right: 2rem;
+    };
+}
+.course-page {
+  width: 100%;
+  min-height: fit-content;
+}
+.course-header {
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: solid 1px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-4-hex;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("/beautiful-composition-palm-leaves-with-copyspace.jpg");
+    z-index: -1;
+    opacity: .6;
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+.course-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  @include font(500);
+  color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+}
+.course-subtitle {
+  font-size: 1.2rem;
+  color: #97a5b7;
+  margin-bottom: 20px;
+  @include font(200);
+}
+.course-description {
+  color: #626f81;
+  margin-bottom: 30px;
+  @include font(200);
+}
+.course-meta {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+.meta-label {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+.meta-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+  @include font(200);
+  color: #64748b;
+}
+.course-progress {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  @include font(500);
+  color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #181818;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  width: 50%;
+  height: 100%;
+  background-color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.lessons-section {
+  margin-bottom: 50px;
+}
+.lessons-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+  @include font(500);
+}
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lesson-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e2e8f04a;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 20px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
+  }
+}
+.lesson-number {
+  width: 40px;
+  height: 40px;
+  @include font(500);
+  color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+  border: solid .5px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-4-hex;
+}
+.lesson-content {
+  flex: 1;
+}
+.lesson-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
+  @include font(500);
+}
+.lesson-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+.lesson-meta {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: flex;
+  gap: 15px;
+}
+.lesson-arrow {
+  font-size: 24px;
+  color: #94a3b8;
+  margin-left: 20px;
+}
+.start-learning {
+  text-align: center;
+}
+.start-button {
+    display: inline-block;
+    min-width: 300px;
+    min-height: 10px;
+    padding: {
+        left: 2rem;
+        right: 2rem;
+        top: 1rem;
+        bottom: 1rem;
+    };
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    border: solid .5px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-4-hex;
+    z-index: 1;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 15px;
+        z-index: -1;
+        width: 0;
+        height: 100%;
+        background-image: linear-gradient(45deg, black, rgb(73, 9, 68));
+        transition: width .2s ease-in-out;
+        left: 0;
+        top: 0;
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+.start-hint {
+  margin-top: 15px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+.course-not-found {
+  padding: 50px;
+  text-align: center;
+}
+
+.to-home {
+  @include font(100);
+  color: #64748b;
+  font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  border: solid 1px #64748b;
+  padding:  {
+    top: 3px;
+    bottom: 3px;
+    left: 10px;
+    right: 10px;
+  };
+  border-radius: 10px;
+}

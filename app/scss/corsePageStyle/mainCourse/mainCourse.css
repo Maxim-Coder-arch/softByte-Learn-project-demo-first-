@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bungee+Spice&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Ga+Maamli&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Jockey+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lacquer&family=Lemon&family=Lilita+One&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IT+Moderna:wght@100..400&family=Poiret+One&family=Prosto+One&family=Protest+Revolution&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Rubik:ital,wght@0,300..900;1,300..900&family=Russo+One&family=Sono:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tektur:wght@400..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  text-decoration: none;
+  background-color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  width: auto;
+  padding: 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+ins,
+del {
+  text-decoration: none;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+menu,
+dir {
+  display: block;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+input[type=range] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+}
+input[type=range]::-moz-range-thumb {
+  appearance: none;
+}
+input[type=range]::-ms-thumb {
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  line-height: inherit;
+  font-family: inherit;
+}
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+body {
+  background-color: #000;
+}
+
+.course-block {
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.course-page {
+  width: 100%;
+  min-height: fit-content;
+}
+
+.course-header {
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: solid 1px #0B2740;
+}
+.course-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/beautiful-composition-palm-leaves-with-copyspace.jpg");
+  z-index: -1;
+  opacity: 0.6;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.course-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #FFFEF6;
+}
+
+.course-subtitle {
+  font-size: 1.2rem;
+  color: #97a5b7;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.course-description {
+  color: #626f81;
+  margin-bottom: 30px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.course-meta {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.meta-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #64748b;
+}
+
+.course-progress {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #13DCF2;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #181818;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 50%;
+  height: 100%;
+  background-color: #13DCF2;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.lessons-section {
+  margin-bottom: 50px;
+}
+
+.lessons-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #FFFEF6;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lesson-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.2901960784);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.lesson-card:hover {
+  box-shadow: 0px 0px 20px #7B17A6;
+}
+
+.lesson-number {
+  width: 40px;
+  height: 40px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #13DCF2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+  border: solid 0.5px #0B2740;
+}
+
+.lesson-content {
+  flex: 1;
+}
+
+.lesson-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #13DCF2;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lesson-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.lesson-meta {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: flex;
+  gap: 15px;
+}
+
+.lesson-arrow {
+  font-size: 24px;
+  color: #94a3b8;
+  margin-left: 20px;
+}
+
+.start-learning {
+  text-align: center;
+}
+
+.start-button {
+  display: inline-block;
+  min-width: 300px;
+  min-height: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #1c1c1c;
+  color: white;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: solid 0.5px #F2D8A7;
+  z-index: 1;
+  position: relative;
+}
+.start-button::before {
+  content: "";
+  position: absolute;
+  border-radius: 15px;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background-image: linear-gradient(45deg, black, rgb(73, 9, 68));
+  transition: width 0.2s ease-in-out;
+  left: 0;
+  top: 0;
+}
+.start-button:hover::before {
+  width: 100%;
+}
+
+.start-hint {
+  margin-top: 15px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.course-not-found {
+  padding: 50px;
+  text-align: center;
+}
+
+.to-home {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #64748b;
+  font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  border: solid 1px #64748b;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}/*# sourceMappingURL=mainCourse.css.map */
