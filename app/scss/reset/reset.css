@@ -13,6 +13,7 @@ body {
   list-style-type: none;
   text-decoration: none;
   background-color: #000;
+  scroll-behavior: smooth;
 }
 
 h1,

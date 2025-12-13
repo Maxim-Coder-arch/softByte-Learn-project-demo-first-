@@ -3,7 +3,7 @@ import { JSX } from "react";
 
 export default function Footer(): JSX.Element {
     return (
-        <>
+        <section id="footer">
             <h2 className="footer-title">SoftByte — Обучение с душой, подготовка к реальности. Бесплатно.</h2>
             <div className="footer">
                 <div className="logotype-footer">
@@ -28,6 +28,6 @@ export default function Footer(): JSX.Element {
                     <p>&copy; softByte learn образование, 2025</p>
                 </div>
             </div>
-        </>
+        </section>
     )
 }

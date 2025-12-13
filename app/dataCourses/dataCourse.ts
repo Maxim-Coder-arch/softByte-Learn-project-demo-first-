@@ -25,11 +25,7 @@ export interface Course {
   level: string;
   lessons: Lesson[];
 }
-import { cssCourse } from './cssCourse/csscourse';
-import { htmlcourse } from './html/htmlCourse';
-import { javascriptCourse } from './javascript/javascriptcourse';
+import { introductionCourse } from "./introduction/introductionCourse";
 export const courses: Course[] = [
-  htmlcourse,
-  javascriptCourse,
-  cssCourse
+  introductionCourse,
 ];

@@ -1,7 +1,29 @@
 'use client';
 import Link from "next/link";
 import { JSX, useState } from "react";
-const data: string[] = ["Главная", "О проекте", "Курсы", "Контакты"];
+
+const data = [
+    {
+        item: "Главная",
+        id: "home"
+    },
+    {
+        item: "О проекте",
+        id: "project"
+    },
+    {
+        item: "Формат обучения",
+        id: "formatlearn"
+    },
+    {
+        item: "Курсы",
+        id: "coursesSection",
+    },
+    {
+        item: "Контакты",
+        id: "footer"
+    }
+];
 export default function Menu(): JSX.Element {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     return (
@@ -13,8 +35,8 @@ export default function Menu(): JSX.Element {
                         <h3>SoftByte Learn</h3>
                     </div>
                     {data.map((listItem, index) => <li key={index}>
-                        <Link href="#">
-                            {listItem}
+                        <Link href={"#" + listItem.id}>
+                            {listItem.item}
                         </Link>
                         </li>)}
                 </ul>
@@ -42,7 +64,9 @@ export default function Menu(): JSX.Element {
                 <div className="points-mobile">
                     {data.map((point, index) => 
                     <div key={index} className="list-point">
-                        <Link href="#">{point}</Link>
+                        <Link 
+                        onClick={()=>setOpenMenu(prev=>!prev)}
+                        href={"#" + point.id}>{point.item}</Link>
                     </div>)}
                 </div>
                 )

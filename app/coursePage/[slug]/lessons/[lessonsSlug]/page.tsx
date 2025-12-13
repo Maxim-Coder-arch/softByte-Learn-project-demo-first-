@@ -49,7 +49,7 @@ export default function LessonPage() {
     const renderContent = () => {
       switch (paragraph.type) {
         case 'heading':
-          const HeadingTag = `h${paragraph.level || 2}` as keyof JSX.IntrinsicElements;
+          const HeadingTag = `h${paragraph.level || 2}`
           return (
             <HeadingTag className={`lsn-heading-${paragraph.level}`}>
               {paragraph.content}

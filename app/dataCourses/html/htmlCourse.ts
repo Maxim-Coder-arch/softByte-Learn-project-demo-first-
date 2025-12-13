@@ -1,8 +1,6 @@
 import { Course } from "../dataCourse"
 
 
-
-
 export const htmlcourse: Course = {
   id: 1,
   slug: "html",
