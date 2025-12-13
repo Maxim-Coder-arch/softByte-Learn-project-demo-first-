@@ -10,7 +10,7 @@ export const introductionCourse: Course = {
         {
             id: "introduction-1",
             slug: "introduction",
-            title: "Введение в программирование",
+            title: "Введение в компьютерный мир",
             description: "Знакомство с понятием программирование. Где и как оно используется",
             duration: "2 минуты",
             videoId: "",
