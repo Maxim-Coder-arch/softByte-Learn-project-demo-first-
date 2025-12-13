@@ -2,7 +2,7 @@ import { Course } from "../dataCourse"
 export const introductionCourse: Course = {
     id: 1,
     slug: "introduction",
-    title: "Введение в прграммирование",
+    title: "Введение в компьютерный мир",
     subTitle: "Познакомься с миром программирования",
     description: "Курс по введению в программирование с полного нуля",
     level: "Начинающий",
@@ -10,7 +10,7 @@ export const introductionCourse: Course = {
         {
             id: "introduction-1",
             slug: "introduction",
-            title: "Введение в компьютерный мир",
+            title: "Введение в программирование",
             description: "Знакомство с понятием программирование. Где и как оно используется",
             duration: "2 минуты",
             videoId: "",
