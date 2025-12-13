@@ -17,7 +17,7 @@
     };
 }
 .lsn-container {
-  width: 90%;
+  width: 95%;
 }
 .lsn-navbar {
   display: flex;
@@ -542,4 +542,9 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
     padding: 16px;
     font-size: 13px;
   }
+}
+.fromVideoYT {
+  color: #3178c6;
+  @include font(100);
+  border-bottom: solid 1px #3178c6;
 }

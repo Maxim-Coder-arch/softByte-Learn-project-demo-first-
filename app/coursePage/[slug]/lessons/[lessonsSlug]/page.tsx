@@ -3,6 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { courses, Paragraph } from '@/app/dataCourses/dataCourse';
 import "@/app/scss/corsePageStyle/mainCourse/lessons.css";
+import Link from 'next/link';
 
 export default function LessonPage() {
   const params = useParams();
@@ -162,6 +163,7 @@ export default function LessonPage() {
           >
             ← К списку уроков
           </button>
+          <Link href="https://www.youtube.com/@SoftByteStudio" className='fromVideoYT' target='_blank'>Видео берется с моего ютуб канала</Link>
           <div className="lsn-progress">
             Урок {currentIndex + 1} из {allLessons.length}
           </div>

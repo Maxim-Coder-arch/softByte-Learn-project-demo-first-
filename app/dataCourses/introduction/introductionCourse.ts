@@ -12,7 +12,7 @@ export const introductionCourse: Course = {
             slug: "introduction",
             title: "Введение в программирование",
             description: "Знакомство с понятием программирование. Где и как оно используется",
-            duration: "2 минуты",
+            duration: "Длительность 2:30",
             videoId: "lo_vT_OgvCI?list=PLeLdJcnxYFTjjC1aAyShoAXvEjUSx0bKN",
             order: 1,
             paragraphs: [

@@ -192,7 +192,7 @@ textarea {
 }
 
 .lsn-container {
-  width: 90%;
+  width: 95%;
 }
 
 .lsn-navbar {
@@ -715,4 +715,11 @@ textarea {
     padding: 16px;
     font-size: 13px;
   }
+}
+.fromVideoYT {
+  color: #3178c6;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  border-bottom: solid 1px #3178c6;
 }/*# sourceMappingURL=lessons.css.map */

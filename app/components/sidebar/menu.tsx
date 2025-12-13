@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import { JSX, useState } from "react";
-
+import { motion } from "framer-motion";
 const data = [
     {
         item: "Главная",
@@ -63,11 +63,24 @@ export default function Menu(): JSX.Element {
             openMenu && (
                 <div className="points-mobile">
                     {data.map((point, index) => 
-                    <div key={index} className="list-point">
+                    <motion.div key={index} className="list-point"
+                    initial={{
+                        y: 50,
+                        opacity: 0
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1
+                    }}
+                    transition={{
+                        delay: index * .07,
+                        ease: "easeOut"
+                    }}
+                    >
                         <Link 
                         onClick={()=>setOpenMenu(prev=>!prev)}
                         href={"#" + point.id}>{point.item}</Link>
-                    </div>)}
+                    </motion.div>)}
                 </div>
                 )
             }

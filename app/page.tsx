@@ -12,7 +12,7 @@ import './scss/main/main.css';
 export default function Home() {
   return (
     <>
-      {/* <Loader /> */}
+      <Loader />
 
       <Menu />
 
