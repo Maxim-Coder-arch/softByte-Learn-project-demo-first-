@@ -25,7 +25,9 @@ export interface Course {
   level: string;
   lessons: Lesson[];
 }
+import { htmlcourse } from "./html/htmlCourse";
 import { introductionCourse } from "./introduction/introductionCourse";
 export const courses: Course[] = [
   introductionCourse,
+  htmlcourse
 ];
