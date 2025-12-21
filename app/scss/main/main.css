@@ -390,7 +390,7 @@ textarea {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url("/hero.jpg");
+  background-image: url("/2150902649.jpg");
   position: relative;
   display: flex;
   align-items: center;
@@ -420,6 +420,7 @@ textarea {
   font-style: normal;
   font-size: 5rem;
   color: #FFFEF6;
+  color: #000;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 450px) {
@@ -432,7 +433,7 @@ textarea {
   font-weight: 200;
   font-style: normal;
   font-size: 1.5rem;
-  color: rgb(209, 207, 207);
+  color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 450px) {
   .hero-content h2 {
@@ -488,7 +489,7 @@ textarea {
 }
 
 .about-us-image {
-  background-image: url("/scene.jpg");
+  background-image: url("/2151847681.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1124,4 +1125,12 @@ textarea {
   font-weight: 100;
   font-style: normal;
   color: #FFFEF6;
+}
+
+.decorate {
+  width: 100%;
+  height: 320px;
+  background-image: url("/g.jpg");
+  background-size: cover;
+  background-position: top;
 }/*# sourceMappingURL=main.css.map */
