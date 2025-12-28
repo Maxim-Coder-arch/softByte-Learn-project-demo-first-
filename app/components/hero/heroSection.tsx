@@ -20,7 +20,7 @@ export default function HeroSection(): JSX.Element {
                         delay: 1.6,
                         ease: "easeOut"
                     }}
-                    >SoftByte</motion.h1>
+                    >SoftByte Learn</motion.h1>
                     <motion.h2
                     initial={{
                         y: 100,

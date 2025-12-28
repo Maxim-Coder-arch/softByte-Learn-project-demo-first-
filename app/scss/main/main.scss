@@ -39,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(black, rgba(255, 255, 255, 0));
     @media screen and (max-width: 620px) {
         display: none;
     }
@@ -189,7 +190,7 @@
     @include size(100vw, 100vh);
     background-size: cover;
     background-position: center;
-    background-image: url("/2150902649.jpg");
+    background-image: url("/2150830366 (2).jpg");
     position: relative;
     display: flex;
     align-items: center;
@@ -206,8 +207,23 @@
     min-height: 300px;
     text-align: left;
     z-index: 1;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.336);
+    border-radius: 12px;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #ffffff15;
+        z-index: -1;
+    }
     @media screen and (max-width: 450px) {
         text-align: center;
+        backdrop-filter: none;
+        &::before {display: none}
     }
     & h1 {
         @include font(600);
@@ -217,6 +233,7 @@
         margin-bottom: 10px;
         @media screen and (max-width: 450px) {
             font-size: 3rem;
+            color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
         }
     }
     & h2 {
@@ -235,11 +252,12 @@
         cursor: pointer;
         color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
         @include font(100);
-        border-radius: 15px;
+        border-radius: 7px;
         outline: solid 1px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-4-hex;
         backdrop-filter: blur(5px);
         position: relative;
         transition: background-color .2s ease-in-out;
+        background: #000;
         &:hover {
             background-color: rgba(0, 0, 0, 0.399);
         }
@@ -314,17 +332,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 2rem;
 }
 .section-work-cards {
     width: 90%;
     height: fit-content;
     display: flex;
     justify-content: space-around;
-    background-image: linear-gradient(black, #f2c06b11);
-    border-bottom: {
-        left-radius: 15px;
-        right-radius: 15px;
-    };
     padding-bottom: 2rem;
     @media screen and (max-width: 1200px) {
         flex-wrap: wrap;
@@ -333,137 +347,66 @@
         };
     }
 }
-.card-container {
-  padding: 2px;
-  border-radius: 24px;
-  position: relative;
-  width: 350px;
-  background-image: linear-gradient(-30deg, var(--gradient-color), transparent, var(--gradient-color)),
-              linear-gradient(to bottom, var(--color-neutral-900), var(--color-neutral-900));
-    @media screen and (max-width: 1200px) {
-        width: 300px;
-    };
-    overflow: hidden;
-    &::before {
-        content: '';
+
+
+
+.main-card {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    // background-color: #343434;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & h3 {
         position: absolute;
-        width: 100%;
-        height: 0;
-        transition: all .2s ease-out;
-        background-image: linear-gradient(#f2c06b5b, black);
-        opacity: 0;
+        top: 20px;
+        font-size: 2rem;
+        color: white;
     }
-    &:hover {
+    & span {
+        color: rgba(255, 255, 255, 0.471);
+        font-size: 1.2rem;
+    }
+    &:nth-child(1) {
         &::before {
-            height: 100%;
-            opacity: .4;
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.353);
+        }
+    }
+    &:nth-child(2) {
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.353);
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        &:nth-child(3) {
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.353);
+            }
         }
     }
 }
-.inner-container {
-  position: relative;
-}
-.border-outer {
-  border: 2px solid rgba(221, 132, 72, 0.5);
-  border-radius: 24px;
-  padding-right: 4px;
-  padding-bottom: 4px;
-}
-.main-card {
-  width: 350px;
-  height: 500px;
-  border-radius: 24px;
-  border: 2px solid var(--electric-border-color);
-  margin-top: -4px;
-  margin-left: -4px;
-  filter: url(#turbulent-displace);
-  @media screen and (max-width: 1200px) {
-        width: 300px;
-        height: 400;
-    }
-}
-.glow-layer-1,
-.glow-layer-2 {
-  border: 2px solid rgba(221, 132, 72, 0.6);
-  border-radius: 24px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  @at-root .glow-layer-1 {
-    filter: blur(1px);
-  }
-  @at-root .glow-layer-2 {
-    border-color: var(--electric-light-color);
-    filter: blur(4px);
-  }
-}
-.background-glow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 24px;
-  filter: blur(32px);
-  transform: scale(1.1);
-  opacity: 0.3;
-  z-index: -1;
-  background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
-}
-.content-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.content-top,
-.content-bottom {
-  display: flex;
-  flex-direction: column;
-  padding: 48px;
-  @at-root .content-top {
-    padding-bottom: 16px;
-    height: 100%;
-  }
-  @at-root .content-bottom {
-    padding-top: 16px;
-  }
-}
-.title {
-  margin-top: auto;
-  @include font(500);
-  font-size: 2rem;
-  color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
-}
-.divider {
-  margin-top: auto;
-  border: none;
-  height: 1px;
-  background-color: currentColor;
-  opacity: 0.1;
-  mask-image: linear-gradient(to right, transparent, black, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
-}
-.description {
-    @include font(200);
-    color: rgba(255, 255, 255, 0.37);
-    font-size: 1rem;
-}
+
+
+
+
 .format {
-    background: linear-gradient(45deg, #ff6b6b, #dee824, #45b7d1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     background-clip: text;
     text-align: center;
     @include font(500);

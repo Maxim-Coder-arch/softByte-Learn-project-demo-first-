@@ -27,33 +27,15 @@ export default function SectionWork(): JSX.Element {
                             <motion.div key={index}
                             initial={{opacity: 0, y: 200}}
                             animate={viewChild ? {opacity: 1, y: 0} : {}}
+                            className="main-card"
                             transition={{
                                 duration: .5,
                                 ease: "easeInOut",
                                 delay: .1 * index
                             }}
                             >
-                                <div className="card-container">
-                                    <div className="inner-container">
-                                        <div className="border-outer">
-                                            <div className="main-card"></div>
-                                        </div>
-                                        <div className="glow-layer-1"></div>
-                                        <div className="glow-layer-2"></div>
-                                    </div>
-                                    <div className="background-glow"></div>
-                                    <div className="content-container">
-                                        <div className="content-top">
-                                            <p className="title">{obj.title}</p>
-                                        </div>
-                                        <hr className="divider" />
-                                        <div className="content-bottom">
-                                            <p className="description">
-                                                {obj.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3 className="title">{obj.title}</h3>
+                                <span className="descr">{obj.description}</span>
                             </motion.div>
                         );
                     })}
