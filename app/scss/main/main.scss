@@ -201,6 +201,9 @@
         inset: 0;
         background-image: linear-gradient(to bottom, transparent ,transparent, rgb(0, 0, 0));
     }
+    @media screen and (max-width: 450px) {
+        padding-left: 0;
+    }
 }
 .hero-content {
     max-width: 650px;
@@ -223,6 +226,7 @@
     @media screen and (max-width: 450px) {
         text-align: center;
         backdrop-filter: none;
+        box-shadow: none;
         &::before {display: none}
     }
     & h1 {
@@ -416,10 +420,7 @@
     }
 }
 .title-for-whom {
-    background: linear-gradient(45deg, $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-1-hex, $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex, $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     text-align: center;
     @include font(500);
     font-size: 3rem;
@@ -439,45 +440,40 @@
     };
 }
 .border-for-whom {
-    width: calc(100% - 2rem);
+    width: 100%;
     min-height: 500px;
-    border-radius: 15px;
     position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
-    border-radius: 15px;
     flex-wrap: wrap;
     row-gap: 20px;
-    padding: {
-        top: 1rem;
-        bottom: 1rem;
-    };
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient($happy-black, $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex);
-        opacity: .1;
-    }
+    background-image: url("/2151205380.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 3rem;
 }
 .card-whom-course {
-    width: 350px;
-    height: 400px;
-    border-radius: 15px;
+    width: calc(100% / 3);
+    min-width: 300px;
+    height: 600px;
     padding: 10px;
-    outline: solid 4px #343434;
+    border-right: solid 1px white;
     position: relative;
     overflow: hidden;
     color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    transition: all .2s ease-in-out;
+    &:hover {
+        backdrop-filter: blur(10px)
+    }
     & span {
         @include font(200);
         font-size: 2rem;
-        text-align: center;
+        text-align: left;
         max-width: 98%;
         position: relative;
         display: flex;
@@ -487,7 +483,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background-image: linear-gradient(to left, $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-1-hex, $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex);
+            background-color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
             top: -5px;
             border-radius: 50%;
         }
@@ -495,10 +491,10 @@
     &::before {
         content: '';
         position: absolute;
-        width: 180px;
-        height: 180px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
-        filter: blur(70px);
+        filter: blur(80px);
         right: 0;
         top: -50px;
         z-index: -1;
@@ -517,6 +513,7 @@
     @media screen and (max-width: 420px){
         width: 300px;
         height: 350px;
+        backdrop-filter: blur(10px);
         & span {
             font-size: 1.3rem;
         }
@@ -550,13 +547,10 @@
     }
 }
 .start-corse {
-    background: linear-gradient(45deg, #ff6b6b, #dee824, #45b7d1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     text-align: center;
     @include font(500);
-    font-size: 3.5rem;
+    font-size: 3.1rem;
 }
 .main-corses-block {
     width: 100vw;
@@ -606,7 +600,7 @@
     }
     transition: box-shadow .2s ease-in-out;
     &:hover {
-        box-shadow: 0px 0px 25px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-3-hex;
+        box-shadow: 0px 0px 35px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
     }
     @media screen and (max-width: 700px){
         width: 100%;
@@ -792,4 +786,37 @@
     background-image: url("/g.jpg");
     background-size: cover;
     background-position: top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.company-points {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+.company-point-block {
+    display: flex;
+    align-items: center;
+    color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+    @include font(100);
+    & p {
+        font-size: 40px;
+        margin-right: 10px;
+    }
 }

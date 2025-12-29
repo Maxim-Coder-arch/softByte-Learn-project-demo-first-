@@ -6,7 +6,6 @@ export default function TitleForWhom(): JSX.Element {
             <h1 className="title-for-whom">
                 Если вы чувствуете, что хотите создавать — вам сюда
             </h1>
-            <div className="decorate"></div>
         </>
     )
 }

@@ -1,6 +1,20 @@
 'use client';
 import { JSX, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+const data = [
+    {
+        title: "1",
+        description: "Год на рынке"
+    },
+    {
+        title: "30",
+        description: "Уникальных проектов"
+    },
+    {
+        title: "50",
+        description: "Человек в комьюнити"
+    }
+]
 export default function AboutUs(): JSX.Element {
     const refParent = useRef(null);
     const viewChild = useInView(refParent, {once: true, amount: .4});
@@ -25,6 +39,18 @@ export default function AboutUs(): JSX.Element {
                     }}
                     >Это личный проект, рождённый из простой идеи: программирование должно быть доступным. Здесь нет компании — есть я, мои знания и искреннее желание делиться опытом. Всё обучение абсолютно бесплатное, потому что я верю, что хороший старт в IT не должен зависеть от бюджета.</motion.span>
                 </div>
+            </div>
+            <div className="company-points">
+                    {
+                        data.map(point => {
+                            return (
+                            <div className="company-point-block" key={point.title}>
+                                <p>{point.title}</p>
+                                <span>{point.description}</span>
+                            </div>
+                            )
+                        })
+                    }
             </div>
         </section>
     )
