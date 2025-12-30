@@ -18,6 +18,8 @@ const data = [
 export default function AboutUs(): JSX.Element {
     const refParent = useRef(null);
     const viewChild = useInView(refParent, {once: true, amount: .4});
+    const refParentPointsCompany = useRef(null);
+    const viewChildPoints = useInView(refParentPointsCompany, {once: true, amount: .4});
     return (
         <section id="project">
             <div className="about-us" ref={refParent}>
@@ -30,24 +32,44 @@ export default function AboutUs(): JSX.Element {
                 }}
                 />
                 <div className="about-us-text fs">
-                    <motion.span
+                    <motion.h2
+                    data-text="проекте"
                     initial={{y: "100px", opacity: 0}}
                     animate={viewChild ? {y: 0, opacity: 1} : {}}
                     transition={{
                         duration: .5,
                         ease: "easeInOut"
                     }}
+                    >О проекте</motion.h2>
+                    <motion.span
+                    initial={{y: "100px", opacity: 0}}
+                    animate={viewChild ? {y: 0, opacity: 1} : {}}
+                    transition={{
+                        duration: .5,
+                        delay: .3,
+                        ease: "easeInOut"
+                    }}
                     >Это личный проект, рождённый из простой идеи: программирование должно быть доступным. Здесь нет компании — есть я, мои знания и искреннее желание делиться опытом. Всё обучение абсолютно бесплатное, потому что я верю, что хороший старт в IT не должен зависеть от бюджета.</motion.span>
                 </div>
             </div>
-            <div className="company-points">
+            <div className="company-points" ref={refParentPointsCompany}>
                     {
-                        data.map(point => {
+                        data.map((point, index) => {
                             return (
-                            <div className="company-point-block" key={point.title}>
+                            <motion.div 
+                            className="company-point-block" 
+                            key={point.title}
+                            initial={{y: "50px", opacity: 0}}
+                            animate={viewChildPoints ? {y: 0, opacity: 1} : {}}
+                            transition={{
+                                duration: .5,
+                                delay: index *.1,
+                                ease: "easeOut"
+                            }}
+                            >
                                 <p>{point.title}</p>
                                 <span>{point.description}</span>
-                            </div>
+                            </motion.div>
                             )
                         })
                     }

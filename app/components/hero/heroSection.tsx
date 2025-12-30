@@ -17,7 +17,7 @@ export default function HeroSection(): JSX.Element {
                         opacity: 1
                     }}
                     transition={{
-                        delay: 1.6,
+                        delay: 3,
                         ease: "easeOut"
                     }}
                     >SoftByte Learn</motion.h1>
@@ -31,7 +31,7 @@ export default function HeroSection(): JSX.Element {
                         opacity: 1
                     }}
                     transition={{
-                        delay: 1.7,
+                        delay: 3.1,
                         ease: "easeOut"
                     }}
                     >Я убежден, что хорошее обучение программированию должно быть доступно всем. Поэтому я создал небольшой проект, где помогаю не просто изучить код, а по-настоящему понять его логику, полюбить процесс и начать создавать свои проекты — совершенно бесплатно. Здесь не будет скучных лекций, только живая практика и моя поддержка на каждом шагу.</motion.h2>
@@ -45,7 +45,7 @@ export default function HeroSection(): JSX.Element {
                         opacity: 1
                     }}
                     transition={{
-                        delay: 1.8,
+                        delay: 3.3,
                         ease: "easeOut"
                     }}
                     >

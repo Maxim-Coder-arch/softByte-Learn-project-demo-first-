@@ -200,11 +200,20 @@ textarea {
   align-items: center;
 }
 
+.line-loader {
+  width: 400px;
+  height: 3px;
+  background-color: #FFFEF6;
+}
+
+.typing-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .typing-container span {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2rem;
   color: #FFFEF6;
 }
 
@@ -309,19 +318,21 @@ textarea {
   right: 0;
   background-color: #000000;
   z-index: -1;
-  opacity: 0.95;
   top: 0;
 }
 
 .list-point {
-  background: rgba(255, 255, 255, 0.1803921569);
-  height: 30px;
-  width: 70%;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
+  height: 50px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.405), rgb(0, 0, 0));
+  border-left: solid 1px #FFFEF6;
 }
 .list-point a {
+  width: 100%;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -391,7 +402,7 @@ textarea {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url("/2150830366 (2).jpg");
+  background: #000;
   position: relative;
   display: flex;
   align-items: center;
@@ -400,12 +411,35 @@ textarea {
 .hero-section::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: linear-gradient(to bottom, transparent, transparent, rgb(0, 0, 0));
+  clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
+  width: 60%;
+  height: 100%;
+  right: 0;
+  background-image: url("/2151675070.jpg");
+  background-size: cover;
+  background-position: left;
+}
+@media screen and (max-width: 450px) {
+  .hero-section::before {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    opacity: 0.5;
+    clip-path: none;
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 450px) {
   .hero-section {
     padding-left: 0;
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   }
 }
 
@@ -415,18 +449,9 @@ textarea {
   text-align: left;
   z-index: 1;
   padding: 15px;
-  backdrop-filter: blur(10px);
   position: relative;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.336);
   border-radius: 12px;
   overflow: hidden;
-}
-.hero-content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.0823529412);
-  z-index: -1;
 }
 @media screen and (max-width: 450px) {
   .hero-content {
@@ -443,14 +468,12 @@ textarea {
   font-weight: 600;
   font-style: normal;
   font-size: 5rem;
-  color: #FFFEF6;
-  color: #000;
   margin-bottom: 10px;
+  color: #FFFEF6;
 }
 @media screen and (max-width: 450px) {
   .hero-content h1 {
     font-size: 3rem;
-    color: #FFFEF6;
   }
 }
 .hero-content h2 {
@@ -505,7 +528,6 @@ textarea {
 .fs {
   height: 70%;
   width: calc(50% - 3rem);
-  border-radius: 15px;
   position: relative;
 }
 @media screen and (max-width: 950px) {
@@ -515,34 +537,48 @@ textarea {
 }
 
 .about-us-image {
-  background-image: url("/2151847681.jpg");
+  background-image: url("/2151675055.jpg");
   background-size: cover;
   background-position: center;
-}
-.about-us-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(transparent, transparent, rgba(0, 0, 0, 0.6235294118), #000000, #000);
 }
 
 .about-us-text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
   padding-left: 20px;
   padding-right: 20px;
+}
+.about-us-text h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 2rem;
+  color: #FFFEF6;
+  position: relative;
+}
+.about-us-text h2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -30px;
+  left: 50px;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.0588235294);
 }
 .about-us-text span {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #FFFEF6;
   text-align: left;
+  max-width: 50%;
 }
 @media screen and (max-width: 950px) {
   .about-us-text span {
     text-align: center;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 540px) {
@@ -1056,6 +1092,8 @@ textarea {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .company-point-block {

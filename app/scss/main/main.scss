@@ -26,10 +26,20 @@
     justify-content: center;
     align-items: center;
 }
-.typing-container span {
-    @include font(500);
-    font-size: 2rem;
-    color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+.line-loader {
+    width: 400px;
+    height: 3px;
+    background-color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+}
+.typing-container {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & span {
+        color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+    }
 }
 .menu {
     width: 100%;
@@ -121,18 +131,20 @@
         right: 0;
         background-color: #000000;
         z-index: -1;
-        opacity: .95;
         top: 0;
     }
 }
 .list-point {
-    background: #ffffff2e;
-    height: 30px;
-    width: 70%;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.405), rgb(0, 0, 0));
+    border-left: solid 1px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     & a {
+        width: 100%;
         @include font(100);
         color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
     }
@@ -190,7 +202,8 @@
     @include size(100vw, 100vh);
     background-size: cover;
     background-position: center;
-    background-image: url("/2150830366 (2).jpg");
+    // background-image: url("/2150830366 (2).jpg");
+    background: #000;
     position: relative;
     display: flex;
     align-items: center;
@@ -198,11 +211,32 @@
     &::before {
         content: '';
         position: absolute;
-        inset: 0;
-        background-image: linear-gradient(to bottom, transparent ,transparent, rgb(0, 0, 0));
+        clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
+        width: 60%;
+        height: 100%;
+        right: 0;
+        background-image: url("/2151675070.jpg");
+        background-size: cover;
+        background-position: left;
+        @media screen and (max-width: 450px) {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            opacity: .5;
+            clip-path: none;
+            bottom: 0;
+        }
     }
     @media screen and (max-width: 450px) {
         padding-left: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+        }
     }
 }
 .hero-content {
@@ -211,18 +245,9 @@
     text-align: left;
     z-index: 1;
     padding: 15px;
-    backdrop-filter: blur(10px);
     position: relative;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.336);
     border-radius: 12px;
     overflow: hidden;
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: #ffffff15;
-        z-index: -1;
-    }
     @media screen and (max-width: 450px) {
         text-align: center;
         backdrop-filter: none;
@@ -232,12 +257,10 @@
     & h1 {
         @include font(600);
         font-size: 5rem;
-        color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
-        color: #000;
         margin-bottom: 10px;
+        color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
         @media screen and (max-width: 450px) {
             font-size: 3rem;
-            color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
         }
     }
     & h2 {
@@ -285,37 +308,48 @@
 .fs {
     height: 70%;
     width: calc(50% - 3rem);
-    border-radius: 15px;
     position: relative;
     @media screen and (max-width: 950px) {
         width: 100%;
     }
 }
 .about-us-image {
-    background-image: url("/2151847681.jpg");
+    background-image: url("/2151675055.jpg");
     background-size: cover;
     background-position: center;
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(transparent, transparent, #0000009f, #000000, $happy-black);
-    }
 }
 .about-us-text {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
     padding: {
         left: 20px;
         right: 20px;
     };
+    & h2 {
+        @include font(100);
+        font-size: 2rem;
+        color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+        position: relative;
+        &::before {
+            content: attr(data-text);;
+            position: absolute;
+            top: -30px;
+            left: 50px;
+            font-size: 5rem;
+            color: #ffffff0f;
+        }
+    }
     & span {
         @include font(100);
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
         text-align: left;
+        max-width: 50%;
         @media screen and (max-width: 950px) {
             text-align: center;
+            max-width: 100%;
         }
         @media screen and (max-width: 540px) {
             font-size: 1rem;
@@ -809,6 +843,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 4rem;
+    padding: {
+        top: 5rem;
+        bottom: 5rem;
+    };
 }
 .company-point-block {
     display: flex;

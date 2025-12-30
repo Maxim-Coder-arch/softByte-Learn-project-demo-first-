@@ -1,45 +1,62 @@
 "use client";
 import { JSX, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 export default function Loader(): JSX.Element | null {
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [text, setText] = useState<string>("");
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const fullText = "SoftByte Learn";
-    const typingSpeed = 70;
-    const cursorBlinkSpeed = 300;
+    const [textDelay, setTextdelay] = useState<boolean>(false);
     useEffect(() => {
-        if (currentIndex < fullText.length) {
-            const typingTimer = setTimeout(() => {
-                setText(prev => prev + fullText[currentIndex]);
-                setCurrentIndex(prev => prev + 1);
-            }, typingSpeed);
-            return () => clearTimeout(typingTimer);
-        }
-    }, [currentIndex, fullText]);
-    useEffect(() => {
-        if (text === fullText) {
-            const hideTimer = setTimeout(() => {
-                setIsLoading(false);
-            }, 400);
-            return () => clearTimeout(hideTimer);
-        }
-    }, [text, fullText]);
-    const [cursorVisible, setCursorVisible] = useState<boolean>(true);
-    useEffect(() => {
-        const cursorTimer = setInterval(() => {
-            setCursorVisible(prev => !prev);
-        }, cursorBlinkSpeed);
-        return () => clearInterval(cursorTimer);
+        const textTimeOut = setTimeout(() => {
+            setTextdelay(true);
+        }, 1000);
+        
+        const timeOut = setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+        return () => {
+            clearTimeout(textTimeOut);
+            clearTimeout(timeOut);
+        };
     }, []);
-    if (!isLoading) {
-        return null;
-    }
-    return (
+    
+    return isLoading ? (
         <div className="loader">
             <div className="typing-container">
-                <span className="typing-text">{text}</span>
-                {cursorVisible && <span className="typing-cursor">|</span>}
+                <motion.div 
+                    className="line-loader top-line"
+                    initial={{ opacity: 0, width: 0, y: 0 }}
+                    animate={{ opacity: 1, width: "100%", y: "-20px" }}
+                    transition={{
+                        duration: 1,
+                        opacity: { duration: 0.5 },
+                        width: { duration: 1, ease: "easeInOut" },
+                        y: { delay: 1, duration: 0.5 }
+                    }}
+                />
+                
+                <motion.span
+                    className="loader-text"
+                    initial={{ fontSize: "0px", opacity: 0 }}
+                    animate={textDelay ? { fontSize: "30px", opacity: 1 } : {}}
+                    transition={{
+                        duration: 0.5
+                    }}
+                >
+                    SoftByte Learn
+                </motion.span>
+                
+                <motion.div 
+                    className="line-loader bottom-line"
+                    initial={{ opacity: 0, width: 0, y: 0 }}
+                    animate={{ opacity: 1, width: "100%", y: "20px" }}
+                    transition={{
+                        duration: 1,
+                        opacity: { duration: 0.5 },
+                        width: { duration: 1, ease: "easeInOut" },
+                        y: { delay: 1, duration: 0.5 }
+                    }}
+                />
             </div>
         </div>
-    );
+    ) : null;
 }
