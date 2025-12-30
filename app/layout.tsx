@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   creator: 'SoftByte',
   publisher: 'SoftByte Learn',
   verification: {
-    google: "yZ7mobjVmC0SAY0BBIJ2r55AR8rmO2MZUu9dpaAx8r"
+    google: "yZ7mobjVmC0SAY0BBIJ2r55AR8rmO2MZUu9dpaAx8r0"
   },
   openGraph: {
     title: 'SoftByte Learn',
