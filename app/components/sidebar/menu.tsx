@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import { JSX, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 const data = [
     {
@@ -26,10 +26,26 @@ const data = [
 ];
 export default function Menu(): JSX.Element {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const [fullStyleMenu, setFullStyleMenu] = useState<boolean>(false);
+    useEffect(() => {
+    const handleScroll = () => {
+            const scrolly = window.scrollY;
+            if (scrolly > 0) {
+                setFullStyleMenu(true);
+            } else {
+                setFullStyleMenu(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
         <>
             <nav className="menu">
-                <ul>
+                <ul id={fullStyleMenu ? "fullStyleMenu" : ""}>
                     <div className="logotype">
                         <div className="logotype-image"></div>
                         <h3>SoftByte Learn</h3>

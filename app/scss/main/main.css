@@ -217,6 +217,11 @@ textarea {
   color: #FFFEF6;
 }
 
+#fullStyleMenu {
+  width: 90%;
+  height: 50px;
+}
+
 .menu {
   width: 100%;
   height: 80px;
@@ -233,8 +238,8 @@ textarea {
   }
 }
 .menu ul {
-  width: 90%;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   right: 0;
   display: flex;
   position: relative;
@@ -244,8 +249,17 @@ textarea {
   align-items: center;
   backdrop-filter: blur(5px);
   border-radius: 10px;
+  transition: all 0.4s ease-out;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding-left: 10px;
   padding-right: 10px;
+}
+.menu ul::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.0980392157);
 }
 @media screen and (max-width: 700px) {
   .menu ul {
@@ -277,11 +291,12 @@ textarea {
 
 .mobile {
   width: 100%;
-  height: 40px;
+  height: 60px;
   position: fixed;
   z-index: 1001;
   display: none;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.231372549);
   backdrop-filter: blur(10px);
 }
 @media screen and (max-width: 620px) {
@@ -300,9 +315,9 @@ textarea {
 .points-mobile {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   right: 0;
-  top: 40px;
+  top: 60px;
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -717,6 +732,11 @@ textarea {
   background-position: center;
   padding-bottom: 3rem;
 }
+@media screen and (max-width: 420px) {
+  .border-for-whom {
+    background-image: none;
+  }
+}
 
 .card-whom-course {
   width: 33.3333333333%;
@@ -844,8 +864,7 @@ textarea {
 .card-course {
   width: calc(33.3333333333% - 20px);
   min-width: 300px;
-  height: 350px;
-  border: solid 1px #3B0E59;
+  height: 450px;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -854,6 +873,7 @@ textarea {
   align-items: center;
   flex-direction: column;
   row-gap: 3rem;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.367);
   transition: box-shadow 0.2s ease-in-out;
 }
 .card-course::before {
@@ -865,7 +885,7 @@ textarea {
   right: -200px;
   top: -200px;
   filter: blur(50px);
-  opacity: 0.4;
+  opacity: 0.2;
 }
 .card-course:hover {
   box-shadow: 0px 0px 35px #13DCF2;
@@ -902,6 +922,8 @@ textarea {
   font-weight: 400;
   font-style: normal;
   font-size: 2.2rem;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.257);
+  padding-bottom: 2rem;
 }
 @media screen and (max-width: 700px) {
   .course-title {
@@ -953,7 +975,7 @@ textarea {
   width: 150px;
   height: 35px;
   border: solid 0.5px #F2C06B;
-  border-radius: 15px;
+  border-radius: 5px;
   display: grid;
   place-items: center;
   font-family: "Bebas Neue", sans-serif;
@@ -968,11 +990,11 @@ textarea {
 .course-link::before {
   content: "";
   position: absolute;
-  border-radius: 15px;
+  border-radius: 5px;
   z-index: -1;
   width: 0;
   height: 100%;
-  background-image: linear-gradient(45deg, black, rgb(73, 9, 68));
+  background-image: linear-gradient(45deg, black, rgb(33, 24, 24));
   transition: width 0.2s ease-in-out;
   left: 0;
 }
@@ -991,10 +1013,7 @@ textarea {
 }
 
 .footer-title {
-  background: linear-gradient(45deg, #C729F2, #7B17A6, #F2C06B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FFFEF6;
   text-align: center;
   margin-bottom: 3rem;
   font-family: "Bebas Neue", sans-serif;
