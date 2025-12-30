@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'SoftByte'}],
   creator: 'SoftByte',
   publisher: 'SoftByte Learn',
+  verification: {
+    google: "yZ7mobjVmC0SAY0BBIJ2r55AR8rmO2MZUu9dpaAx8r"
+  },
   openGraph: {
     title: 'SoftByte Learn',
     description: 'Образовательная платформа SoftByte Learn. Текстовые и видеоуроки по программированию.',
