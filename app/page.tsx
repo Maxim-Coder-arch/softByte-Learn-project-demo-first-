@@ -13,18 +13,14 @@ export default function Home() {
   return (
     <>
       <Loader />
-
       <Menu />
-
       <HeroSection />
-
       <AboutUs />
       <TitleSectionWork />
       <SectionWork />
       <ForWhom />
       <TitleCourses />
       <MainCourses />
-
       <Footer />
     </>
   );
