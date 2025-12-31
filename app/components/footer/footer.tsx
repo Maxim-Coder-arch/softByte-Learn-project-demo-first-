@@ -1,10 +1,23 @@
+'use client';
 import Link from "next/link";
-import { JSX } from "react";
-
+import { JSX, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 export default function Footer(): JSX.Element {
+    const refParent = useRef(null);
+    const viewChild = useInView(refParent, {once: true, amount: .2});
     return (
-        <section id="footer">
-            <h2 className="footer-title">SoftByte — Обучение с душой, подготовка к реальности. Бесплатно.</h2>
+        <section id="footer" ref={refParent}>
+            <motion.h2 
+            className="footer-title"
+            initial={{
+                y: "20px",
+                opacity: 0
+            }}
+            animate={viewChild ? {
+                y: 0,
+                opacity: 1
+            } : {}}
+            >SoftByte — Обучение с душой, подготовка к реальности. Бесплатно.</motion.h2>
             <div className="footer">
                 <div className="logotype-footer">
                     <div className="logotype-image"></div>
