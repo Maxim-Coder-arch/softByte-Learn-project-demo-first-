@@ -35,7 +35,8 @@ export default function ForWhom(): JSX.Element {
                         data.map((point, index) => {
                             return (
                                 <motion.div 
-                                className={`card-whom-course card-whom-index-${index}`} 
+                                className="card-container" 
+                                key={index}
                                 initial={{y: 100, opacity: 0}}
                                 animate={viewChild ? {y: 0, opacity: 1} : {}}
                                 transition={{
@@ -43,8 +44,13 @@ export default function ForWhom(): JSX.Element {
                                     ease: "easeInOut",
                                     delay: .1 * index
                                 }}
-                                key={index}>
-                                    <span>{point}</span>
+                                >
+                                    <div className="card-wrapper">
+                                        <div className="card">
+                                            <span>{point}</span>
+                                        </div>
+                                        <div className="glow"></div>
+                                    </div>
                                 </motion.div>
                             )
                         })
