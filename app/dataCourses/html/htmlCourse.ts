@@ -1912,6 +1912,226 @@ images/
           content: "Использование правильных тегов делает HTML-разметку семантически корректной и профессиональной."
         }
       ]
+    },
+    {
+      id: "html-8",
+      slug: "html8",
+      title: "Медиаконтент в HTML",
+      description: "Как добавлять видео, аудио и внешний контент в HTML. Теги video, audio и iframe.",
+      duration: "Длительность 3:13",
+      videoId: "QM9zQaLsbHQ?list=PLeLdJcnxYFThC2nAtBRPsrX8ClU_TYQNi",
+      order: 8,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "Современные сайты редко состоят только из текста. Видео, музыка, карты и внешний контент — всё это часть пользовательского опыта."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "В HTML для работы с такими элементами существует отдельная группа тегов, предназначенных для медиаконтента."
+        },
+        {
+          id: "p3",
+          type: "heading",
+          content: "Видео в HTML. Тег <video>"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Для добавления видео на страницу используется тег <video>. Он создаёт встроенный видеоплеер прямо в браузере."
+        },
+        {
+          id: "p5",
+          type: "text",
+          content: "Простейший пример выглядит так:"
+        },
+        {
+          id: "p6",
+          type: "code",
+          content: `
+<video src="video.mp4" controls></video>
+          `
+        },
+        {
+          id: "p7",
+          type: "quote",
+          content: "HTML не воспроизводит видео сам — он лишь сообщает браузеру, где находится файл и как его показать."
+        },
+        {
+          id: "p8",
+          type: "text",
+          content: "Атрибут controls добавляет элементы управления: воспроизведение, паузу и регулировку громкости."
+        },
+        {
+          id: "p9",
+          type: "heading",
+          content: "Несколько форматов видео"
+        },
+        {
+          id: "p10",
+          type: "text",
+          content: "Не все браузеры одинаково поддерживают форматы видео. Поэтому часто указывают несколько вариантов одного файла."
+        },
+        {
+          id: "p11",
+          type: "code",
+          content: `
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  Этот браузер не поддерживает видео.
+</video>
+          `
+        },
+        {
+          id: "p12",
+          type: "text",
+          content: "Браузер сам выберет первый поддерживаемый формат. Если ни один не подойдёт, пользователь увидит текст внутри тега."
+        },
+        {
+          id: "p13",
+          type: "heading",
+          content: "Размеры видео"
+        },
+        {
+          id: "p14",
+          type: "text",
+          content: "Видео — это обычный элемент страницы, поэтому ему можно задать размеры."
+        },
+        {
+          id: "p15",
+          type: "code",
+          content: `
+<video src="video.mp4" controls width="600"></video>
+          `
+        },
+        {
+          id: "p16",
+          type: "note",
+          content: "Чаще всего достаточно указать только ширину — высота подстроится автоматически."
+        },
+        {
+          id: "p17",
+          type: "heading",
+          content: "Автовоспроизведение видео"
+        },
+        {
+          id: "p18",
+          type: "text",
+          content: "Современные браузеры ограничивают автоматическое воспроизведение видео со звуком."
+        },
+        {
+          id: "p19",
+          type: "quote",
+          content: "Автопроигрывание работает только при отключённом звуке."
+        },
+        {
+          id: "p20",
+          type: "code",
+          content: `
+<video src="video.mp4" autoplay muted loop></video>
+          `
+        },
+        {
+          id: "p21",
+          type: "text",
+          content: "Такой подход часто используют для фоновых видео в интерфейсах."
+        },
+        {
+          id: "p22",
+          type: "heading",
+          content: "Обложка видео"
+        },
+        {
+          id: "p23",
+          type: "text",
+          content: "Пока видео не загружено или не запущено, можно показать изображение-превью."
+        },
+        {
+          id: "p24",
+          type: "code",
+          content: `
+<video src="video.mp4" controls poster="preview.jpg"></video>
+          `
+        },
+        {
+          id: "p25",
+          type: "heading",
+          content: "Аудио в HTML. Тег <audio>"
+        },
+        {
+          id: "p26",
+          type: "text",
+          content: "Для добавления звука используется тег <audio>. Он работает по тому же принципу, что и video, но без изображения."
+        },
+        {
+          id: "p27",
+          type: "code",
+          content: `
+<audio src="audio.mp3" controls></audio>
+          `
+        },
+        {
+          id: "p28",
+          type: "text",
+          content: "Аудио часто применяется для подкастов, голосовых сообщений и музыкальных фрагментов."
+        },
+        {
+          id: "p29",
+          type: "heading",
+          content: "Встраивание внешнего контента. Тег <iframe>"
+        },
+        {
+          id: "p30",
+          type: "text",
+          content: "Иногда медиаконтент хранится на сторонних сервисах — например, видео с YouTube или интерактивные карты."
+        },
+        {
+          id: "p31",
+          type: "text",
+          content: "В таких случаях используется тег <iframe>."
+        },
+        {
+          id: "p32",
+          type: "code",
+          content: `
+<iframe
+  src="https://www.youtube.com/embed/QM9zQaLsbHQ?list=PLeLdJcnxYFThC2nAtBRPsrX8ClU_TYQNi"
+  width="560"
+  height="315"
+  allowfullscreen>
+</iframe>
+          `
+        },
+        {
+          id: "p33",
+          type: "quote",
+          content: "iframe встраивает другой сайт или сервис внутрь вашей страницы."
+        },
+        {
+          id: "p34",
+          type: "heading",
+          content: "Главное, что стоит запомнить"
+        },
+        {
+          id: "p35",
+          type: "list",
+          content: "HTML позволяет работать с медиаконтентом без JavaScript:",
+          listItems: [
+            "— video и audio используются для локальных файлов",
+            "— source позволяет указывать несколько форматов",
+            "— iframe применяется для внешних сервисов",
+            "— HTML отвечает за структуру, а не за логику воспроизведения"
+          ]
+        },
+        {
+          id: "p36",
+          type: "quote",
+          content: "Важно понимать принцип работы тегов, а не заучивать все атрибуты."
+        }
+      ]
     }
   ]
 }
