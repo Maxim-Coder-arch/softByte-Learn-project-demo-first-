@@ -2390,6 +2390,194 @@ images/
           content: "Понимание структуры таблиц позволяет создавать чистый, семантически правильный код и упрощает работу с данными на сайте."
         }
       ]
+    },
+    {
+      id: "html-10",
+      slug: "html10",
+      title: "HTML формы с нуля: form, input и label",
+      description: "Разбор HTML-форм: как работает тег form, поля input, подписи label и логическая группировка через fieldset и legend.",
+      duration: "Длительность 5:54",
+      videoId: "eYWoX5XvzGg",
+      order: 10,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "HTML-формы — это основной способ взаимодействия пользователя с сайтом. Через формы отправляют сообщения, вводят логины и пароли, ищут информацию и заполняют анкеты."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "Чтобы понимать, как работают формы в браузере, важно разобрать их структуру и базовые теги, из которых они состоят."
+        },
+        {
+          id: "p3",
+          type: "heading",
+          content: "Тег <form> — основа любой формы"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Любая HTML-форма начинается с тега <form>. Он объединяет все поля ввода и сообщает браузеру, что перед ним форма для ввода данных."
+        },
+        {
+          id: "p5",
+          type: "code",
+          content: `
+<form>
+  <!-- Здесь будут поля формы -->
+</form>
+          `
+        },
+        {
+          id: "p6",
+          type: "note",
+          content: "Без тега <form> поля ввода могут отображаться, но данные из них не будут восприниматься как единая форма."
+        },
+        {
+          id: "p7",
+          type: "heading",
+          content: "Поле ввода: <input>"
+        },
+        {
+          id: "p8",
+          type: "text",
+          content: "Тег <input> используется для ввода данных пользователем. Это может быть текст, пароль, число и другие значения."
+        },
+        {
+          id: "p9",
+          type: "code",
+          content: `
+<form>
+  <input>
+</form>
+          `
+        },
+        {
+          id: "p10",
+          type: "text",
+          content: "Чтобы поле ввода имело смысл, ему обычно задают имя с помощью атрибута name. Именно по этому имени данные отправляются дальше."
+        },
+        {
+          id: "p11",
+          type: "code",
+          content: `
+<form>
+  <input name="login">
+</form>
+          `
+        },
+        {
+          id: "p12",
+          type: "quote",
+          content: "Атрибут name — один из самых важных в формах. Без него данные поля фактически теряются."
+        },
+        {
+          id: "p13",
+          type: "heading",
+          content: "Подпись к полю: <label>"
+        },
+        {
+          id: "p14",
+          type: "text",
+          content: "Тег <label> используется для текстового описания поля ввода. Он делает форму понятнее и улучшает доступность."
+        },
+        {
+          id: "p15",
+          type: "code",
+          content: `
+<form>
+  <label for="login">Логин</label>
+  <input id="login" name="login">
+</form>
+          `
+        },
+        {
+          id: "p16",
+          type: "note",
+          content: "Атрибут for у label связывает подпись с конкретным input по его id."
+        },
+        {
+          id: "p17",
+          type: "heading",
+          content: "Группировка полей: <fieldset>"
+        },
+        {
+          id: "p18",
+          type: "text",
+          content: "Если в форме несколько логически связанных полей, их удобно объединять с помощью тега <fieldset>."
+        },
+        {
+          id: "p19",
+          type: "code",
+          content: `
+<form>
+  <fieldset>
+    <label for="login">Логин</label>
+    <input id="login" name="login">
+
+    <label for="password">Пароль</label>
+    <input id="password" name="password">
+  </fieldset>
+</form>
+          `
+        },
+        {
+          id: "p20",
+          type: "heading",
+          content: "Заголовок группы: <legend>"
+        },
+        {
+          id: "p21",
+          type: "text",
+          content: "Тег <legend> задаёт заголовок для группы полей внутри fieldset и сразу объясняет пользователю, что это за форма."
+        },
+        {
+          id: "p22",
+          type: "code",
+          content: `
+<form>
+  <fieldset>
+    <legend>Форма входа</legend>
+
+    <label for="login">Логин</label>
+    <input id="login" name="login">
+
+    <label for="password">Пароль</label>
+    <input id="password" name="password">
+  </fieldset>
+</form>
+          `
+        },
+        {
+          id: "p23",
+          type: "quote",
+          content: "fieldset и legend делают форму не только визуально понятнее, но и семантически правильнее."
+        },
+        {
+          id: "p24",
+          type: "heading",
+          content: "Итог"
+        },
+        {
+          id: "p25",
+          type: "list",
+          content: "В этом уроке разобрали основы HTML-форм:",
+          listItems: [
+            "form — контейнер для всей формы",
+            "input — поле ввода данных",
+            "label — подпись к полю",
+            "name — ключевой атрибут для передачи данных",
+            "fieldset — логическая группировка полей",
+            "legend — заголовок группы полей"
+          ]
+        },
+        {
+          id: "p26",
+          type: "text",
+          content: "Понимание структуры HTML-форм — обязательный шаг для дальнейшего изучения веб-разработки, JavaScript и серверной логики."
+        }
+      ]
     }
   ]
 }
