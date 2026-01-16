@@ -6,9 +6,10 @@
     font-style: normal;
 }
 body {
-    background-color: $happy-black;
+    background-color: rgb(14, 14, 14);
 }
 .course-block {
+  background-color: rgb(14, 14, 14);
     width: 100vw;
     min-height: 100vh;
     padding: {
@@ -29,14 +30,13 @@ body {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border: solid 1px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-4-hex;
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: url("/beautiful-composition-palm-leaves-with-copyspace.jpg");
     z-index: -1;
-    opacity: .6;
+    opacity: .8;
     background-size: cover;
     background-position: bottom;
   }
@@ -46,16 +46,16 @@ body {
   font-size: 2.5rem;
   margin-bottom: 15px;
   @include font(500);
-  color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+  color: rgb(255, 255, 255);
 }
 .course-subtitle {
   font-size: 1.2rem;
-  color: #97a5b7;
+  color: rgb(255, 255, 255);
   margin-bottom: 20px;
   @include font(200);
 }
 .course-description {
-  color: #626f81;
+  color: rgb(128, 126, 126);
   margin-bottom: 30px;
   @include font(200);
 }
@@ -63,6 +63,11 @@ body {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  width: fit-content;
+  padding: 6px;
+  border-radius: 7px;
+  backdrop-filter: blur(10px);
+  background: #00000057;
 }
 .meta-item {
   display: flex;
@@ -70,13 +75,13 @@ body {
 }
 .meta-label {
   font-size: 0.9rem;
-  color: #64748b;
+  color: rgb(128, 126, 126);
 }
 .meta-value {
   font-weight: 600;
   font-size: 1.1rem;
   @include font(200);
-  color: #64748b;
+  color: rgb(128, 126, 126);
 }
 .course-progress {
   padding: 20px;
@@ -119,32 +124,31 @@ body {
   gap: 20px;
 }
 .lesson-card {
+  background-color: #191919;
   display: flex;
   align-items: center;
   padding: 20px;
-  border: 1px solid #e2e8f04a;
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   &:hover {
-    box-shadow: 0px 0px 20px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
+    outline: solid 10px rgba(5, 251, 255, 0.346);
   }
 }
 .lesson-number {
   width: 40px;
   height: 40px;
   @include font(500);
-  color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
-  border-radius: 10px;
+  color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
   font-weight: bold;
   flex-shrink: 0;
-  border: solid .5px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-4-hex;
+  border-right: solid 1px rgba(255, 255, 255, 0.462);
 }
 .lesson-content {
   flex: 1;
@@ -152,23 +156,27 @@ body {
 .lesson-title {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-5-hex;
+  color: rgb(255, 255, 255);
   @include font(500);
 }
 .lesson-description {
   font-size: 1.1rem;
-  color: #64748b;
+  color: rgb(137, 137, 137);
   margin-bottom: 10px;
 }
 .lesson-meta {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: rgb(137, 137, 137);
   display: flex;
   gap: 15px;
+  width: fit-content;
+  padding: 6px;
+  background-color: rgb(32, 31, 31);
+  border-radius: 7px;
 }
 .lesson-arrow {
   font-size: 24px;
-  color: #94a3b8;
+  color: #ffffff;
   margin-left: 20px;
 }
 .start-learning {
@@ -189,27 +197,12 @@ body {
     border-radius: 15px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: background-color 0.2s ease;
     cursor: pointer;
-    border: solid .5px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-4-hex;
     z-index: 1;
     position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        border-radius: 15px;
-        z-index: -1;
-        width: 0;
-        height: 100%;
-        background-image: linear-gradient(45deg, black, rgb(73, 9, 68));
-        transition: width .2s ease-in-out;
-        left: 0;
-        top: 0;
-    }
+    transition: all .3s ease-in-out;
     &:hover {
-        &::before {
-            width: 100%;
-        }
+      outline: solid 5px rgba(255, 255, 255, 0.081);
     }
 }
 .start-hint {
@@ -224,17 +217,21 @@ body {
 
 .to-home {
   @include font(100);
-  color: #64748b;
+  color: #ffffff;
   font-size: 1rem;
   position: absolute;
   top: 1rem;
   right: 2rem;
-  border: solid 1px #64748b;
+  background: #2c2c2c;
   padding:  {
     top: 3px;
     bottom: 3px;
-    left: 10px;
-    right: 10px;
+    left: 20px;
+    right: 20px;
   };
   border-radius: 10px;
+  transition: background-color .3s ease-in-out;
+  &:hover {
+    background: #171717;
+  }
 }

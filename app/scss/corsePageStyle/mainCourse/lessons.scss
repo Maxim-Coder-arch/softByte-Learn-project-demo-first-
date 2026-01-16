@@ -11,6 +11,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: rgb(14, 14, 14);
     padding: {
         top: 2rem;
         bottom: 2rem;
@@ -25,14 +26,14 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex;
+  border-bottom: 1px solid #313131;;
 }
 
 .lsn-nav-back {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex;
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
@@ -40,6 +41,14 @@
   padding: 0;
   transition: color 0.2s;
   @include font(100);
+  padding: {
+    top: 5px;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+  };
+  border-radius: 7px;
+  background: #313131;
   &:hover {
     color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-4-hex;
   }
@@ -53,7 +62,6 @@
   @include font(100);
 }
 
-/* Видео блок */
 .lsn-video-wrapper {
   border-radius: 12px;
   overflow: hidden;
@@ -64,38 +72,30 @@
 
 .lsn-video {
     border: none;
-    border-radius: 15px;
-box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
+    border-radius: 12px;
+  box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
   display: block;
   width: 90%;
+  max-width: 1500px;
+  min-height: 600px;
   background-color: #151515;
   transition: box-shadow .2s ease-in-out;
-  &:hover {
-    box-shadow: 0 0px 25px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
-  }
 }
 .lsn-material {
-  background-color: rgb(24, 24, 24);
-  border: 1px solid $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-4-hex;
   border-radius: 12px;
   padding: 35px;
   margin-bottom: 40px;
-  transition: box-shadow .2s ease-in-out;
-  box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
-  &:hover {
-    box-shadow: 0 0px 15px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tunnel-3d-illustration-2-hex;
-  }
 }
 .lsn-pagination {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
   padding-top: 30px;
-  border-top: 1px solid $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex;
+  border-top: 1px solid rgb(58, 58, 58);
 }
 .lsn-prev-btn {
   padding: 14px 28px;
-  border: 1px solid $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex;
+  background: #000000;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -104,10 +104,13 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   font-weight: 500;
   transition: all 0.2s ease;
   color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
+  &:hover {
+    background: #1a1a1a;
+  }
 }
 .lsn-next-btn {
   padding: 14px 28px;
-  border: solid 1px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-3-hex;
+  background: #000000;
   color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
   border-radius: 8px;
   cursor: pointer;
@@ -116,6 +119,9 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   gap: 10px;
   font-weight: 600;
   transition: all 0.2s ease;
+  &:hover {
+    background: #1a1a1a;
+  }
 }
 .lsn-finish-btn {
   padding: 14px 28px;
@@ -231,7 +237,6 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   row-gap: 20px;
 }
 .lsn-card {
-  // background-color: white;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -241,7 +246,7 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 }
 /* Стили для карточки заголовка урока */
 .lsn-header-card {
-  background: #2d2d2d;
+  background: #191919;
   color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
   border-radius: 16px;
   padding: 32px;
@@ -263,12 +268,9 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   color: white;
   font-weight: 600;
 }
-
-/* Специфичные стили для разных типов карточек */
 .lsn-card-heading {
   color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
   border: none;
-  border-bottom: solid 1px $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
 }
 
 .lsn-card-heading .lsn-card-content {
@@ -276,15 +278,17 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 }
 
 .lsn-card-text {
-  background-color: #f8f9fa;
+  border: none;
+  // background-color: #f8f9fa;
 }
 
 .lsn-card-list {
+  background-color: #0e0e0e;
   border-left: 4px solid #20c997;
 }
 
 .lsn-card-quote {
-  background-color: #e9f7fe;
+  border: none;
   border-left: 4px solid #17a2b8;
 }
 
@@ -295,6 +299,7 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 
 .lsn-card-code {
   background-color: #1e1e1e;
+  border: none;
   border-left: 4px solid #343a40;
   padding: 0;
   overflow: hidden;
@@ -321,16 +326,17 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
-  color: #495057;
+  color: rgb(255, 255, 255);
 }
 .lsn-card-list {
-  background-color: white;
+  border: none;
+  background-color: #0e0e0e;
 }
 .lsn-card-list .lsn-list-title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #212529;
+  color: #ffffff;
 }
 
 .lsn-card-list .lsn-list {
@@ -340,7 +346,7 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 .lsn-card-list .lsn-list-item {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #495057;
+  color: #a1a1a1;
 }
 
 .lsn-card-quote .lsn-quote {
@@ -348,7 +354,7 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   padding: 0;
   background: none;
   border: none;
-  color: #212529;
+  color: #ffffff;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -357,6 +363,7 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   margin: 0;
 }
 .lsn-card-note {
+  border: none;
   background-color: #1f1f1f;
 }
 .lsn-card-note .lsn-note {
@@ -430,7 +437,6 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 
 
 
-/* Исправленные стили для карточек с кодом */
 .lsn-card-code {
   background-color: #1e1e1e;
   border-left: 4px solid #343a40;
@@ -438,12 +444,10 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   overflow: hidden;
 }
 
-/* Убираем стандартные отступы у карточки для кода */
 .lsn-card-code .lsn-card-content {
   padding: 0;
 }
 
-/* Переименовываем .lsn-code-container в .lsn-code-content для избежания конфликтов */
 .lsn-code-content {
   width: 100%;
 }
@@ -453,19 +457,18 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: #2d2d2d;
-  border-bottom: 1px solid #404040;
+  background-color: #222222;
 }
 
 .lsn-code-content .lsn-code-language {
-  color: #ccc;
+  color: #fbf9f9;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .lsn-code-content .lsn-copy-btn {
-  background-color: #404040;
+  background-color: #292929;
   color: #fff;
   border: none;
   padding: 6px 14px;
@@ -518,8 +521,6 @@ box-shadow: 0 0px 0px $Abstract-flight-in-retro-neon-hyper-warp-space-in-the-tun
 .lsn-card-code[data-language="bash"] .lsn-code-language {
   color: #4eaa25;
 }
-
-/* Иконка для карточки с кодом */
 .lsn-card-code .lsn-card-icon {
   background-color: #343a40;
   z-index: 2;

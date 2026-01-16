@@ -187,6 +187,7 @@ textarea {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  background-color: rgb(14, 14, 14);
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -201,14 +202,14 @@ textarea {
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #F2C06B;
+  border-bottom: 1px solid #313131;
 }
 
 .lsn-nav-back {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #F2C06B;
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
@@ -218,6 +219,12 @@ textarea {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 100;
   font-style: normal;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 7px;
+  background: #313131;
 }
 .lsn-nav-back:hover {
   color: #F2D8A7;
@@ -234,7 +241,6 @@ textarea {
   font-style: normal;
 }
 
-/* Видео блок */
 .lsn-video-wrapper {
   border-radius: 12px;
   overflow: hidden;
@@ -245,28 +251,20 @@ textarea {
 
 .lsn-video {
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 0px 0px #7B17A6;
   display: block;
   width: 90%;
+  max-width: 1500px;
+  min-height: 600px;
   background-color: #151515;
   transition: box-shadow 0.2s ease-in-out;
 }
-.lsn-video:hover {
-  box-shadow: 0 0px 25px #7B17A6;
-}
 
 .lsn-material {
-  background-color: rgb(24, 24, 24);
-  border: 1px solid #0B2740;
   border-radius: 12px;
   padding: 35px;
   margin-bottom: 40px;
-  transition: box-shadow 0.2s ease-in-out;
-  box-shadow: 0 0px 0px #7B17A6;
-}
-.lsn-material:hover {
-  box-shadow: 0 0px 15px #7B17A6;
 }
 
 .lsn-pagination {
@@ -274,12 +272,12 @@ textarea {
   justify-content: space-between;
   margin-top: 50px;
   padding-top: 30px;
-  border-top: 1px solid #F2C06B;
+  border-top: 1px solid rgb(58, 58, 58);
 }
 
 .lsn-prev-btn {
   padding: 14px 28px;
-  border: 1px solid #F2C06B;
+  background: #000000;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -289,10 +287,13 @@ textarea {
   transition: all 0.2s ease;
   color: #FFFEF6;
 }
+.lsn-prev-btn:hover {
+  background: #1a1a1a;
+}
 
 .lsn-next-btn {
   padding: 14px 28px;
-  border: solid 1px #F2C06B;
+  background: #000000;
   color: #FFFEF6;
   border-radius: 8px;
   cursor: pointer;
@@ -301,6 +302,9 @@ textarea {
   gap: 10px;
   font-weight: 600;
   transition: all 0.2s ease;
+}
+.lsn-next-btn:hover {
+  background: #1a1a1a;
 }
 
 .lsn-finish-btn {
@@ -424,7 +428,7 @@ textarea {
 
 /* Стили для карточки заголовка урока */
 .lsn-header-card {
-  background: #2d2d2d;
+  background: #191919;
   color: #FFFEF6;
   border-radius: 16px;
   padding: 32px;
@@ -448,11 +452,9 @@ textarea {
   font-weight: 600;
 }
 
-/* Специфичные стили для разных типов карточек */
 .lsn-card-heading {
   color: #FFFEF6;
   border: none;
-  border-bottom: solid 1px #FFFEF6;
 }
 
 .lsn-card-heading .lsn-card-content {
@@ -460,15 +462,16 @@ textarea {
 }
 
 .lsn-card-text {
-  background-color: #f8f9fa;
+  border: none;
 }
 
 .lsn-card-list {
+  background-color: #0e0e0e;
   border-left: 4px solid #20c997;
 }
 
 .lsn-card-quote {
-  background-color: #e9f7fe;
+  border: none;
   border-left: 4px solid #17a2b8;
 }
 
@@ -479,6 +482,7 @@ textarea {
 
 .lsn-card-code {
   background-color: #1e1e1e;
+  border: none;
   border-left: 4px solid #343a40;
   padding: 0;
   overflow: hidden;
@@ -505,18 +509,19 @@ textarea {
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
-  color: #495057;
+  color: rgb(255, 255, 255);
 }
 
 .lsn-card-list {
-  background-color: white;
+  border: none;
+  background-color: #0e0e0e;
 }
 
 .lsn-card-list .lsn-list-title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #212529;
+  color: #ffffff;
 }
 
 .lsn-card-list .lsn-list {
@@ -526,7 +531,7 @@ textarea {
 .lsn-card-list .lsn-list-item {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #495057;
+  color: #a1a1a1;
 }
 
 .lsn-card-quote .lsn-quote {
@@ -534,7 +539,7 @@ textarea {
   padding: 0;
   background: none;
   border: none;
-  color: #212529;
+  color: #ffffff;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -544,6 +549,7 @@ textarea {
 }
 
 .lsn-card-note {
+  border: none;
   background-color: #1f1f1f;
 }
 
@@ -605,7 +611,6 @@ textarea {
     font-size: 20px;
   }
 }
-/* Исправленные стили для карточек с кодом */
 .lsn-card-code {
   background-color: #1e1e1e;
   border-left: 4px solid #343a40;
@@ -613,12 +618,10 @@ textarea {
   overflow: hidden;
 }
 
-/* Убираем стандартные отступы у карточки для кода */
 .lsn-card-code .lsn-card-content {
   padding: 0;
 }
 
-/* Переименовываем .lsn-code-container в .lsn-code-content для избежания конфликтов */
 .lsn-code-content {
   width: 100%;
 }
@@ -628,19 +631,18 @@ textarea {
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: #2d2d2d;
-  border-bottom: 1px solid #404040;
+  background-color: #222222;
 }
 
 .lsn-code-content .lsn-code-language {
-  color: #ccc;
+  color: #fbf9f9;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .lsn-code-content .lsn-copy-btn {
-  background-color: #404040;
+  background-color: #292929;
   color: #fff;
   border: none;
   padding: 6px 14px;
@@ -694,7 +696,6 @@ textarea {
   color: #4eaa25;
 }
 
-/* Иконка для карточки с кодом */
 .lsn-card-code .lsn-card-icon {
   background-color: #343a40;
   z-index: 2;
