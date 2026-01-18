@@ -2578,6 +2578,206 @@ images/
           content: "Понимание структуры HTML-форм — обязательный шаг для дальнейшего изучения веб-разработки, JavaScript и серверной логики."
         }
       ]
+    },
+    {
+      id: "html-11",
+      slug: "html11",
+      title: "HTML формы без ошибок: input и его типы простым языком",
+      description: "Подробный разбор тега input и атрибута type: как браузер работает с полями ввода, какие типы input существуют и как собирать удобные HTML-формы.",
+      duration: "Длительность 8:05",
+      videoId: "s2uz2o1l24k?list=PLeLdJcnxYFThC2nAtBRPsrX8ClU_TYQNi",
+      order: 11,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "Почти на каждом сайте есть формы, а в формах — поля ввода. Именно через input пользователь вводит данные: почту, пароль, телефон, возраст и другую информацию."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "При этом многие начинающие разработчики используют input без понимания его типов, из-за чего формы становятся неудобными и работают не так, как могли бы."
+        },
+        {
+          id: "p3",
+          type: "heading",
+          content: "Тег <input> и атрибут type"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Тег <input> сам по себе — это универсальное поле ввода. Но именно атрибут type сообщает браузеру, какие данные ожидаются от пользователя."
+        },
+        {
+          id: "p5",
+          type: "note",
+          content: "От значения type зависит проверка данных, внешний вид поля и клавиатура на мобильных устройствах."
+        },
+        {
+          id: "p6",
+          type: "heading",
+          content: "type=\"email\" — поле для электронной почты"
+        },
+        {
+          id: "p7",
+          type: "text",
+          content: "Тип email используется, когда от пользователя ожидается адрес электронной почты. Браузер автоматически проверяет формат введённых данных."
+        },
+        {
+          id: "p8",
+          type: "code",
+          content: `
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email">
+          `
+        },
+        {
+          id: "p9",
+          type: "note",
+          content: "Браузер проверяет только формат email, но не существование почтового адреса."
+        },
+        {
+          id: "p10",
+          type: "heading",
+          content: "type=\"password\" — пароль"
+        },
+        {
+          id: "p11",
+          type: "text",
+          content: "Тип password используется для ввода паролей. Все символы скрываются, а браузер может предложить сохранить пароль."
+        },
+        {
+          id: "p12",
+          type: "code",
+          content: `
+    <label for="password">Пароль</label>
+    <input id="password" name="password" type="password">
+          `
+        },
+        {
+          id: "p13",
+          type: "heading",
+          content: "type=\"tel\" — номер телефона"
+        },
+        {
+          id: "p14",
+          type: "text",
+          content: "Тип tel предназначен для ввода номера телефона. Он не проверяет формат, но включает цифровую клавиатуру на мобильных устройствах."
+        },
+        {
+          id: "p15",
+          type: "code",
+          content: `
+    <label for="phone">Телефон</label>
+    <input id="phone" name="phone" type="tel">
+          `
+        },
+        {
+          id: "p16",
+          type: "heading",
+          content: "type=\"checkbox\" и type=\"radio\""
+        },
+        {
+          id: "p17",
+          type: "text",
+          content: "Checkbox используется для выбора нескольких значений или подтверждения согласия, а radio — для выбора одного варианта из группы."
+        },
+        {
+          id: "p18",
+          type: "code",
+          content: `
+    <input id="agree" name="agree" type="checkbox" value="yes">
+    <label for="agree">Я принимаю условия</label>
+          `
+        },
+        {
+          id: "p19",
+          type: "heading",
+          content: "Практика — форма регистрации"
+        },
+        {
+          id: "p20",
+          type: "text",
+          content: "Теперь соберём простую форму регистрации, используя разные типы input. Ниже приведён код с подробными комментариями к каждой строке."
+        },
+        {
+          id: "p21",
+          type: "code",
+          content: `
+    <!-- Контейнер формы -->
+    <form>
+
+      <!-- fieldset объединяет связанные поля формы -->
+      <fieldset>
+
+        <!-- legend задаёт заголовок группы полей -->
+        <legend>Регистрация</legend>
+
+        <!-- Подпись для поля email -->
+        <label for="email">Email</label>
+
+        <!-- Поле ввода электронной почты -->
+        <!-- type="email" включает проверку формата -->
+        <input
+          id="email"       <!-- Уникальный идентификатор поля -->
+          name="email"     <!-- Имя поля для отправки данных -->
+          type="email">    <!-- Тип поля -->
+
+        <!-- Подпись для поля пароля -->
+        <label for="password">Пароль</label>
+
+        <!-- Поле ввода пароля -->
+        <input
+          id="password"    <!-- id для связи с label -->
+          name="password"  <!-- имя для сервера -->
+          type="password"> <!-- символы будут скрыты -->
+
+        <!-- Подпись для телефона -->
+        <label for="phone">Телефон</label>
+
+        <!-- Поле ввода номера телефона -->
+        <input
+          id="phone"
+          name="phone"
+          type="tel">      <!-- включает цифровую клавиатуру -->
+
+        <!-- Заголовок группы радиокнопок -->
+        <p>Пол:</p>
+
+        <!-- Радиокнопка мужского пола -->
+        <input
+          id="male"
+          name="gender"    <!-- одинаковый name объединяет radio -->
+          type="radio"
+          value="male">
+        <label for="male">Мужской</label>
+
+        <!-- Радиокнопка женского пола -->
+        <input
+          id="female"
+          name="gender"
+          type="radio"
+          value="female">
+        <label for="female">Женский</label>
+
+        <!-- Чекбокс согласия -->
+        <input
+          id="agree"
+          name="agree"
+          type="checkbox"
+          value="yes">
+        <label for="agree">Согласен с условиями</label>
+
+      </fieldset>
+    </form>
+          `
+        },
+        {
+          id: "p22",
+          type: "quote",
+          content: "Правильно подобранные типы input делают форму удобной, понятной браузеру и комфортной для пользователя."
+        },
+      ]
     }
   ]
 }
