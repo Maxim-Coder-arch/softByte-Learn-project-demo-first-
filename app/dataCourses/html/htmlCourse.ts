@@ -2778,6 +2778,296 @@ images/
           content: "Правильно подобранные типы input делают форму удобной, понятной браузеру и комфортной для пользователя."
         },
       ]
+    },
+    {
+      id: "html-12",
+      slug: "html12",
+      title: "HTML формы без ошибок: textarea и select простым языком",
+      description: "Подробный разбор тегов textarea и select: многострочный ввод, выпадающие списки, обязательные поля и правильные паттерны HTML-форм.",
+      duration: "Длительность 3:34",
+      videoId: "YfKbmnrO3bk?list=PLeLdJcnxYFThC2nAtBRPsrX8ClU_TYQNi",
+      order: 12,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "После изучения input почти всегда возникает следующий вопрос: что делать, если пользователю нужно ввести большой текст или выбрать значение из списка. Именно для этого в HTML существуют textarea и select."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "Эти элементы встречаются в формах комментариев, заявок, анкет, настроек и личных кабинетов. И при неправильном использовании они быстро делают форму неудобной и непонятной."
+        },
+
+        {
+          id: "p3",
+          type: "heading",
+          content: "Тег <textarea> — многострочное поле ввода"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Тег textarea используется тогда, когда пользователь должен ввести сразу несколько строк текста: сообщение, комментарий, описание или отзыв."
+        },
+        {
+          id: "p5",
+          type: "text",
+          content: "В отличие от input, textarea является парным тегом. Всё, что написано между открывающим и закрывающим тегом, будет отображаться в поле как значение по умолчанию."
+        },
+        {
+          id: "p6",
+          type: "code",
+          content: `
+<form>
+  <label for="message">Сообщение</label>
+
+  <textarea id="message" name="message">
+Введите ваш текст здесь
+  </textarea>
+</form>
+          `
+        },
+        {
+          id: "p7",
+          type: "note",
+          content: "Текст внутри textarea — это аналог атрибута value, но записывается он прямо между тегами."
+        },
+
+        {
+          id: "p8",
+          type: "heading",
+          content: "Атрибуты textarea"
+        },
+        {
+          id: "p9",
+          type: "text",
+          content: "Как и input, textarea поддерживает атрибут name. Именно по нему данные из поля будут отправлены при отправке формы."
+        },
+        {
+          id: "p10",
+          type: "text",
+          content: "Атрибут id используется для связи textarea с label, чтобы подпись была кликабельной и форма оставалась доступной."
+        },
+
+        {
+          id: "p11",
+          type: "heading",
+          content: "Тег <select> — выпадающий список"
+        },
+        {
+          id: "p12",
+          type: "text",
+          content: "Тег select используется, когда пользователю нужно выбрать одно или несколько значений из заранее заданного списка."
+        },
+        {
+          id: "p13",
+          type: "text",
+          content: "Все варианты выбора внутри select описываются с помощью тегов option."
+        },
+        {
+          id: "p14",
+          type: "code",
+          content: `
+<form>
+  <label for="city">Город</label>
+
+  <select id="city" name="city">
+    <option value="moscow">Москва</option>
+    <option value="spb">Санкт-Петербург</option>
+    <option value="kazan">Казань</option>
+  </select>
+</form>
+          `
+        },
+
+        {
+          id: "p15",
+          type: "heading",
+          content: "Тег <option> и атрибут value"
+        },
+        {
+          id: "p16",
+          type: "text",
+          content: "Тег option описывает отдельный вариант выбора. Текст внутри option видит пользователь, а значение атрибута value отправляется на сервер."
+        },
+        {
+          id: "p17",
+          type: "note",
+          content: "Если value не указан, браузер отправит текст внутри option, но в реальных проектах value всегда задают явно."
+        },
+
+        {
+          id: "p18",
+          type: "heading",
+          content: "Атрибут selected — значение по умолчанию"
+        },
+        {
+          id: "p19",
+          type: "text",
+          content: "По умолчанию браузер выбирает первый option. Чтобы выбрать другой вариант при загрузке страницы, используется атрибут selected."
+        },
+        {
+          id: "p20",
+          type: "code",
+          content: `
+<select>
+  <option value="moscow">Москва</option>
+  <option value="spb" selected>Санкт-Петербург</option>
+  <option value="kazan">Казань</option>
+</select>
+          `
+        },
+
+        {
+          id: "p21",
+          type: "heading",
+          content: "Атрибут multiple — выбор нескольких значений"
+        },
+        {
+          id: "p22",
+          type: "text",
+          content: "Если добавить атрибут multiple, пользователь сможет выбрать сразу несколько вариантов. Такое поведение часто используется в фильтрах и настройках."
+        },
+        {
+          id: "p23",
+          type: "code",
+          content: `
+<select multiple>
+  <option value="html">HTML</option>
+  <option value="css">CSS</option>
+  <option value="js">JavaScript</option>
+</select>
+          `
+        },
+
+        {
+          id: "p24",
+          type: "heading",
+          content: "Обязательные поля: required и disabled"
+        },
+        {
+          id: "p25",
+          type: "text",
+          content: "Атрибут required сообщает браузеру, что поле обязательно для заполнения. Без значения форма не будет отправлена."
+        },
+        {
+          id: "p26",
+          type: "text",
+          content: "Атрибут disabled полностью отключает элемент: его нельзя выбрать, и его значение не отправляется вместе с формой."
+        },
+        {
+          id: "p27",
+          type: "code",
+          content: `
+<select required>
+  <option value="" selected disabled>Не выбрано</option>
+  <option value="moscow">Москва</option>
+  <option value="spb">Санкт-Петербург</option>
+</select>
+          `
+        },
+
+        {
+          id: "p28",
+          type: "heading",
+          content: "Тег <optgroup> — группировка вариантов"
+        },
+        {
+          id: "p29",
+          type: "text",
+          content: "Тег optgroup используется для логической группировки option внутри select. Это удобно в больших списках."
+        },
+        {
+          id: "p30",
+          type: "code",
+          content: `
+<select>
+  <optgroup label="Россия">
+    <option value="moscow">Москва</option>
+    <option value="spb">Санкт-Петербург</option>
+  </optgroup>
+
+  <optgroup label="Европа">
+    <option value="paris">Париж</option>
+    <option value="berlin">Берлин</option>
+  </optgroup>
+</select>
+          `
+        },
+
+        {
+          id: "p31",
+          type: "heading",
+          content: "Практика — сборка формы"
+        },
+        {
+          id: "p32",
+          type: "text",
+          content: "Ниже приведён пример формы с input, textarea и select. Каждая строка снабжена комментариями для лучшего понимания."
+        },
+        {
+          id: "p33",
+          type: "code",
+          content: `
+<form>
+  <!-- Начало формы -->
+
+  <fieldset>
+    <!-- fieldset объединяет связанные поля -->
+
+    <legend>Обратная связь</legend>
+    <!-- Заголовок группы полей -->
+
+    <label for="name">Имя</label>
+    <!-- Подпись для текстового поля -->
+
+    <input
+      id="name"          <!-- Связывает поле с label -->
+      name="name"        <!-- Имя поля для отправки данных -->
+      type="text"        <!-- Обычное текстовое поле -->
+      required>          <!-- Поле обязательно для заполнения -->
+
+    <label for="message">Сообщение</label>
+    <!-- Подпись для textarea -->
+
+    <textarea
+      id="message"       <!-- id для связи с label -->
+      name="message"     <!-- Имя поля -->
+      required>          <!-- Обязательное поле -->
+    </textarea>
+
+    <label for="city">Город</label>
+    <!-- Подпись для select -->
+
+    <select
+      id="city"          <!-- id для label -->
+      name="city"        <!-- Имя поля -->
+      required>          <!-- Обязательный выбор -->
+
+      <option value="" selected disabled>
+        Не выбрано
+      </option>
+      <!-- Подсказка, недоступная для выбора -->
+
+      <option value="moscow">Москва</option>
+      <option value="spb">Санкт-Петербург</option>
+
+    </select>
+
+    <button>Отправить</button>
+    <!-- Кнопка отправки формы -->
+
+  </fieldset>
+</form>
+          `
+        },
+
+        {
+          id: "p34",
+          type: "quote",
+          content: "Хорошо настроенная HTML-форма — это не стили и не JavaScript, а понимание того, как браузер работает с вводом данных."
+        }
+      ]
     }
   ]
 }
