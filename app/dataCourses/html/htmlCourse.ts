@@ -3074,7 +3074,7 @@ images/
       slug: "html13",
       title: "HTML формы без ошибок: required, disabled, placeholder и другие атрибуты",
       description: "Подробный разбор ключевых атрибутов HTML-форм: required, disabled, readonly, placeholder, inputmode, type и autocomplete. Практические примеры и сборка формы с комментариями.",
-      duration: "Длительность 10:15",
+      duration: "Длительность 3:49",
       videoId: "uw3y-BaDufU",
       order: 13,
       paragraphs: [
