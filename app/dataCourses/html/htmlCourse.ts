@@ -3068,6 +3068,255 @@ images/
           content: "Хорошо настроенная HTML-форма — это не стили и не JavaScript, а понимание того, как браузер работает с вводом данных."
         }
       ]
+    },
+    {
+      id: "html-13",
+      slug: "html13",
+      title: "HTML формы без ошибок: required, disabled, placeholder и другие атрибуты",
+      description: "Подробный разбор ключевых атрибутов HTML-форм: required, disabled, readonly, placeholder, inputmode, type и autocomplete. Практические примеры и сборка формы с комментариями.",
+      duration: "Длительность 10:15",
+      videoId: "uw3y-BaDufU",
+      order: 13,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "HTML-формы умеют гораздо больше, чем кажется на первый взгляд. Даже без JavaScript браузер может проверять данные, показывать подсказки, управлять клавиатурой и помогать пользователю заполнять форму."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "В этом уроке мы подробно разберём атрибуты HTML-форм, которые напрямую влияют на удобство пользователя и поведение формы."
+        },
+
+        {
+          id: "p3",
+          type: "heading",
+          content: "Атрибут required — обязательное поле"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Атрибут required сообщает браузеру, что поле обязательно для заполнения. Если оставить такое поле пустым и попытаться отправить форму, браузер покажет предупреждение."
+        },
+        {
+          id: "p5",
+          type: "text",
+          content: "Атрибут required можно использовать с input, textarea и select."
+        },
+        {
+          id: "p6",
+          type: "code",
+          content: `
+<form>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required>
+</form>
+          `
+        },
+
+        {
+          id: "p7",
+          type: "heading",
+          content: "required и select — правильный паттерн"
+        },
+        {
+          id: "p8",
+          type: "text",
+          content: "Чтобы required корректно работал с select, необходимо создать состояние «ничего не выбрано». Для этого используется option с пустым value и атрибутами selected и disabled."
+        },
+        {
+          id: "p9",
+          type: "code",
+          content: `
+<select name="city" required>
+  <option value="" selected disabled>Не выбрано</option>
+  <option value="moscow">Москва</option>
+  <option value="spb">Санкт-Петербург</option>
+</select>
+          `
+        },
+
+        {
+          id: "p10",
+          type: "heading",
+          content: "Атрибут disabled — отключённое поле"
+        },
+        {
+          id: "p11",
+          type: "text",
+          content: "Атрибут disabled полностью отключает элемент. Пользователь не может с ним взаимодействовать, а его значение не отправляется вместе с формой."
+        },
+        {
+          id: "p12",
+          type: "code",
+          content: `
+<input type="text" value="Недоступно" disabled>
+          `
+        },
+        {
+          id: "p13",
+          type: "text",
+          content: "disabled можно применять не только к полям, но и к fieldset — в этом случае отключается сразу вся группа элементов."
+        },
+
+        {
+          id: "p14",
+          type: "heading",
+          content: "Атрибут readonly — доступен, но не редактируется"
+        },
+        {
+          id: "p15",
+          type: "text",
+          content: "readonly запрещает редактирование значения, но поле остаётся доступным: его можно выделить, скопировать и оно отправляется вместе с формой."
+        },
+        {
+          id: "p16",
+          type: "code",
+          content: `
+<input type="text" value="Только для чтения" readonly>
+          `
+        },
+
+        {
+          id: "p17",
+          type: "heading",
+          content: "Атрибут placeholder — подсказка внутри поля"
+        },
+        {
+          id: "p18",
+          type: "text",
+          content: "placeholder показывает пользователю подсказку о том, какие данные нужно ввести. Текст исчезает, как только пользователь начинает ввод."
+        },
+        {
+          id: "p19",
+          type: "code",
+          content: `
+<input type="text" placeholder="Введите имя">
+          `
+        },
+
+        {
+          id: "p20",
+          type: "heading",
+          content: "Атрибут inputmode — клавиатура на мобильных устройствах"
+        },
+        {
+          id: "p21",
+          type: "text",
+          content: "inputmode подсказывает браузеру, какую клавиатуру показать на мобильных устройствах. Он не ограничивает ввод, а лишь рекомендует тип клавиатуры."
+        },
+        {
+          id: "p22",
+          type: "code",
+          content: `
+<input type="text" inputmode="numeric">
+          `
+        },
+
+        {
+          id: "p23",
+          type: "heading",
+          content: "Разница между type и inputmode"
+        },
+        {
+          id: "p24",
+          type: "text",
+          content: "type задаёт реальное поведение поля и ограничения ввода. inputmode — лишь подсказка для клавиатуры. В первую очередь всегда следует правильно выбирать type."
+        },
+
+        {
+          id: "p25",
+          type: "heading",
+          content: "Атрибут autocomplete — автозаполнение браузера"
+        },
+        {
+          id: "p26",
+          type: "text",
+          content: "autocomplete управляет автозаполнением данных. Браузер ориентируется на значение name и предлагает сохранённые ранее данные."
+        },
+        {
+          id: "p27",
+          type: "code",
+          content: `
+<input type="email" name="email" autocomplete="on">
+          `
+        },
+
+        {
+          id: "p28",
+          type: "heading",
+          content: "Практика — сборка формы с комментариями"
+        },
+        {
+          id: "p29",
+          type: "text",
+          content: "Ниже приведён пример формы с input, textarea и select. Каждая строка подробно прокомментирована."
+        },
+        {
+          id: "p30",
+          type: "code",
+          content: `
+<form>
+  <!-- Начало формы -->
+
+  <fieldset disabled>
+    <!-- fieldset группирует поля -->
+    <!-- disabled отключает всю группу -->
+
+    <legend>Регистрация</legend>
+    <!-- Заголовок формы -->
+
+    <label for="name">Имя</label>
+    <!-- Подпись для поля -->
+
+    <input
+      id="name"              <!-- id связывает input с label -->
+      name="name"            <!-- имя поля для отправки -->
+      type="text"            <!-- текстовое поле -->
+      placeholder="Ваше имя" <!-- подсказка -->
+      required>              <!-- обязательное поле -->
+
+    <label for="about">О себе</label>
+
+    <textarea
+      id="about"
+      name="about"
+      placeholder="Коротко о себе"
+      required>
+    </textarea>
+
+    <label for="city">Город</label>
+
+    <select
+      id="city"
+      name="city"
+      required>
+
+      <option value="" selected disabled>
+        Не выбрано
+      </option>
+
+      <option value="moscow">Москва</option>
+      <option value="spb">Санкт-Петербург</option>
+
+    </select>
+
+    <button type="submit">
+      Отправить
+    </button>
+
+  </fieldset>
+</form>
+          `
+        },
+
+        {
+          id: "p31",
+          type: "quote",
+          content: "Грамотно настроенные HTML-атрибуты позволяют браузеру взять на себя большую часть логики формы ещё до подключения JavaScript."
+        }
+      ]
     }
   ]
 }
