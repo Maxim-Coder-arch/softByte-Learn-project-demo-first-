@@ -3812,6 +3812,355 @@ images/
           content: "SVG — это стандарт для современной веб-графики. Понимание его основ сильно упрощает работу с интерфейсами."
         }
       ]
+    },
+    {
+      id: "html-16",
+      slug: "html16",
+      title: "Глобальные атрибуты HTML: class, id, data, tabindex, lang. Финал курса + проект",
+      description: "Финальный урок по HTML. Подробно разбираем глобальные атрибуты: class, id, title, hidden, tabindex, lang, data-* и комментарии. В конце — полноценный мини-проект сайта на чистом HTML, использующий все изученные теги.",
+      duration: "Длительность 4:39",
+      videoId: "Qkn6b3Rh3aw?list=PLeLdJcnxYFThC2nAtBRPsrX8ClU_TYQNi",
+      order: 16,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "text",
+          content: "Это финальный урок курса по HTML. Здесь мы собираем всё, что изучали ранее, и разбираем глобальные атрибуты — универсальные инструменты, которые работают почти с любым HTML-тегом."
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "Если теги отвечают на вопрос «что это за элемент», то глобальные атрибуты отвечают на вопрос «как с ним работать». Именно они делают HTML управляемым."
+        },
+
+        {
+          id: "p3",
+          type: "heading",
+          content: "Почему без глобальных атрибутов HTML ломается"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Новички часто пишут HTML, который выглядит нормально, но его невозможно масштабировать. Причина — элементы никак не идентифицируются."
+        },
+        {
+          id: "p5",
+          type: "code",
+          content: `
+<div>
+  <h1>Заголовок</h1>
+  <p>Текст</p>
+  <button>Кнопка</button>
+</div>
+          `
+        },
+        {
+          id: "p6",
+          type: "text",
+          content: "Для браузера это просто набор тегов. Нет имён, ролей и связей. Любые изменения превращаются в хаос."
+        },
+
+        {
+          id: "p7",
+          type: "heading",
+          content: "class — группировка элементов"
+        },
+        {
+          id: "p8",
+          type: "text",
+          content: "class — это имя, которое можно дать элементу. Один класс может использоваться у множества элементов."
+        },
+        {
+          id: "p9",
+          type: "code",
+          content: `
+<header class="site-header">
+  <h1 class="site-title">Мой сайт</h1>
+</header>
+          `
+        },
+        {
+          id: "p10",
+          type: "code",
+          content: `
+<style>
+  .site-title {
+    color: navy;
+  }
+</style>
+          `
+        },
+        {
+          id: "p11",
+          type: "text",
+          content: "Точка перед именем — это CSS-селектор класса. Он говорит браузеру, к какому элементу применить стиль."
+        },
+
+        {
+          id: "p12",
+          type: "heading",
+          content: "id — точечная идентификация"
+        },
+        {
+          id: "p13",
+          type: "text",
+          content: "id — уникальное имя элемента. На странице он может быть только один."
+        },
+        {
+          id: "p14",
+          type: "code",
+          content: `
+<section id="about">
+  <h2>О проекте</h2>
+</section>
+          `
+        },
+        {
+          id: "p15",
+          type: "code",
+          content: `
+<style>
+  #about {
+    background: #f3f3f3;
+  }
+</style>
+          `
+        },
+        {
+          id: "p16",
+          type: "text",
+          content: "id используется для якорей, точных стилей и будущей работы с JavaScript."
+        },
+
+        {
+          id: "p17",
+          type: "heading",
+          content: "title — подсказки и UX"
+        },
+        {
+          id: "p18",
+          type: "code",
+          content: `
+<a href="#" title="Перейти на главную страницу">
+  Главная
+</a>
+          `
+        },
+        {
+          id: "p19",
+          type: "text",
+          content: "title даёт дополнительную информацию без перегрузки интерфейса."
+        },
+
+        {
+          id: "p20",
+          type: "heading",
+          content: "hidden — управление видимостью"
+        },
+        {
+          id: "p21",
+          type: "code",
+          content: `
+<div hidden>
+  Этот блок временно скрыт
+</div>
+          `
+        },
+        {
+          id: "p22",
+          type: "text",
+          content: "hidden полностью исключает элемент из отображения и логики интерфейса."
+        },
+
+        {
+          id: "p23",
+          type: "heading",
+          content: "tabindex и доступность"
+        },
+        {
+          id: "p24",
+          type: "code",
+          content: `
+<button tabindex="1">Войти</button>
+<button tabindex="2">Регистрация</button>
+          `
+        },
+        {
+          id: "p25",
+          type: "text",
+          content: "tabindex управляет порядком навигации с клавиатуры — важнейший аспект доступности."
+        },
+
+        {
+          id: "p26",
+          type: "heading",
+          content: "lang — язык документа"
+        },
+        {
+          id: "p27",
+          type: "code",
+          content: `
+<html lang="ru">
+          `
+        },
+        {
+          id: "p28",
+          type: "code",
+          content: `
+<p lang="en">Hello, this is English text</p>
+          `
+        },
+        {
+          id: "p29",
+          type: "text",
+          content: "lang помогает браузеру, поисковикам и screen-reader'ам."
+        },
+
+        {
+          id: "p30",
+          type: "heading",
+          content: "data-* — собственные данные"
+        },
+        {
+          id: "p31",
+          type: "text",
+          content: "data-атрибуты позволяют хранить информацию прямо в HTML — аккуратно и безопасно."
+        },
+        {
+          id: "p32",
+          type: "code",
+          content: `
+<button data-type="primary">Кнопка</button>
+          `
+        },
+        {
+          id: "p33",
+          type: "code",
+          content: `
+<style>
+  button[data-type="primary"] {
+    background: black;
+    color: white;
+  }
+</style>
+          `
+        },
+        {
+          id: "p34",
+          type: "text",
+          content: "data-атрибуты отлично подходят для состояний, ролей и логики интерфейса."
+        },
+
+        {
+          id: "p35",
+          type: "heading",
+          content: "Комментарии — читаемость кода"
+        },
+        {
+          id: "p36",
+          type: "code",
+          content: `
+<!-- Навигация сайта -->
+          `
+        },
+
+        {
+          id: "p37",
+          type: "heading",
+          content: "Финальный проект: одностраничный сайт на чистом HTML"
+        },
+        {
+          id: "p38",
+          type: "text",
+          content: "Ниже — полноценная HTML-страница, использующая все основные теги и глобальные атрибуты курса."
+        },
+        {
+          id: "p39",
+          type: "code",
+          content: `
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML — финальный проект</title>
+
+  <style>
+    .header-title {
+      color: darkblue;
+    }
+
+    nav a {
+      margin-right: 10px;
+    }
+
+    section[data-section="features"] {
+      background: #f5f5f5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Шапка сайта -->
+  <header>
+    <h1 class="header-title" id="top">
+      HTML курс завершён
+    </h1>
+
+    <nav>
+      <a href="#about">О курсе</a>
+      <a href="#features">Возможности</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <main>
+
+    <section id="about">
+      <h2>О курсе</h2>
+      <p>
+        Курс посвящён основам HTML и правильной разметке.
+      </p>
+    </section>
+
+    <section id="features" data-section="features">
+      <h2>Что вы изучили</h2>
+
+      <article>
+        <h3>Семантика</h3>
+        <p>header, main, section, article</p>
+      </article>
+
+      <article>
+        <h3>Формы и атрибуты</h3>
+        <p>input, label, required</p>
+      </article>
+    </section>
+
+    <aside>
+      <p title="Дополнительная информация">
+        HTML — фундамент веба
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- Подвал -->
+  <footer id="contact">
+    <p>&copy; 2026 HTML Course</p>
+  </footer>
+
+</body>
+</html>
+          `
+        },
+        {
+          id: "p40",
+          type: "quote",
+          content: "Теперь HTML — это не просто теги, а полноценный язык структуры и смысла."
+        }
+      ]
     }
   ]
 }
