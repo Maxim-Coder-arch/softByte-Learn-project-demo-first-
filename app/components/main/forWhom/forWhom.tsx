@@ -2,60 +2,89 @@
 import { JSX, useRef } from "react";
 import TitleForWhom from "./titleForWhom";
 import { motion, useInView } from "framer-motion";
-const data: string[] = ["Начинающие с нуля, которые не знают, с чего начать", "Самоучки, желающие систематизировать знания", "Те, кто считает, что не потянет платные курсы"];
-interface variants_type {
-    initial: {
-        width: string,
-        opacity: number,
-    },
-    animate: {
-        width: string,
-        opacity: number,
-    }
-}
-const variatns: variants_type = {
-    initial: {
-        width: "100%",
-        opacity: 1
-    },
-    animate: {
-        width: "0%",
-        opacity: 0
-    }
-}
+import { benefitsData } from "./forwhom.data";
+import Link from "next/link";
+
 export default function ForWhom(): JSX.Element {
     const refParent = useRef(null);
-    const viewChild = useInView(refParent, {once: true, amount: .4});
+    const isInView = useInView(refParent, { once: true, amount: 0.3 });
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { 
+            y: 40, 
+            opacity: 0,
+            scale: 0.95
+        },
+        visible: { 
+            y: 0, 
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.5, ease: "easeOut" }
+        },
+    };
+
+    const imageVariants = {
+        rest: { scale: 1 },
+        hover: { scale: 1.05, transition: { duration: 0.3 } },
+    };
+
     return (
         <>
             <TitleForWhom />
             <div className="for-whom">
-                <div className="border-for-whom" ref={refParent}>
+                <motion.div 
+                    className="border-for-whom" 
+                    ref={refParent}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     {
-                        data.map((point, index) => {
+                        benefitsData.map((item) => {
                             return (
                                 <motion.div 
-                                className="card-container" 
-                                key={index}
-                                initial={{y: 100, opacity: 0}}
-                                animate={viewChild ? {y: 0, opacity: 1} : {}}
-                                transition={{
-                                    duration: .6,
-                                    ease: "easeInOut",
-                                    delay: .1 * index
-                                }}
+                                    className="card-for-whom" 
+                                    key={item.id}
+                                    variants={cardVariants}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    <div className="card-wrapper">
-                                        <div className="card">
-                                            <span>{point}</span>
-                                        </div>
-                                        <div className="glow"></div>
-                                    </div>
+                                    <motion.div 
+                                        className="benefit-outer"
+                                        initial="rest"
+                                    >
+                                        <motion.div 
+                                            style={{backgroundImage: `url(${item.image})`}}
+                                            className="benefit-image"
+                                            variants={imageVariants}
+                                        />
+                                        <motion.div 
+                                            className="benefit-content"
+                                        >
+                                            <h3>{item.title}</h3>
+                                            <p>{item.description}</p>
+                                        </motion.div>
+                                    </motion.div>
+                                    <motion.button
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <Link href={item.url}>{item.label}</Link>
+                                    </motion.button>
                                 </motion.div>
                             )
                         })
                     }
-                </div>
+                </motion.div>
             </div>
         </>
     )

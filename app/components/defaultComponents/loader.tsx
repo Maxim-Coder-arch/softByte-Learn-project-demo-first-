@@ -12,7 +12,7 @@ export default function Loader(): JSX.Element | null {
         
         const timeOut = setTimeout(() => {
             setIsLoading(false);
-        }, 3000);
+        }, 1500);
         return () => {
             clearTimeout(textTimeOut);
             clearTimeout(timeOut);

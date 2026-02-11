@@ -17,11 +17,11 @@ export default function Footer(): JSX.Element {
                 y: 0,
                 opacity: 1
             } : {}}
-            >SoftByte — Обучение с душой, подготовка к реальности. Бесплатно.</motion.h2>
+            >SoftByte Learn — Обучение с душой, подготовка к реальности. Бесплатно.</motion.h2>
             <div className="footer">
                 <div className="logotype-footer">
                     <div className="logotype-image"></div>
-                    <span>SoftByte Learn</span>
+                    <span>SoftByte</span>
                 </div>
                 <div className="links">
                     <div className="tg-b bl">

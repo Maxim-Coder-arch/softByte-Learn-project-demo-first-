@@ -37,17 +37,19 @@ export default function MainCourses() {
                                 }}
                             className={`card-course index${(index % 3) + 1}`}
                                 key={course.id}>
-                                <div className="title-corse-block">
-                                    <span className="course-title">{course.title}</span>
-                                    <span className="subTitle-course">{course.subTitle}</span>
-                                </div>
-                                <div className="footer-card-course">
-                                    <Link href={`/coursePage/${course.slug}`}className="course-link"
-                                    target="blank"
-                                    >
-                                        Учиться
-                                    </Link>
-                                </div>
+                                    <div className="course-card-image-container">
+                                        <div 
+                                        style={{backgroundImage: `url(${course.image})`}}
+                                        className="image-card-course"></div>
+                                    </div>
+                                    <div className="card-course-containet-ln">
+                                        <span className="course-title">{course.title}</span>
+                                        <span className="subTitle-course">{course.subTitle}</span>
+                                        <Link href={`/coursePage/${course.slug}`}className="course-link"
+                                        >
+                                            Учиться
+                                        </Link>
+                                    </div>
                             </motion.div>
                         )
                     })}

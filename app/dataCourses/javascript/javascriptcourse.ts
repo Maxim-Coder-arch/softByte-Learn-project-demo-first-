@@ -1,4 +1,4 @@
-import { Course } from "../dataCourse"
+import { Course } from "../../types/type";
 
 export const javascriptCourse: Course = {
   id: 2,

@@ -1,10 +1,11 @@
-import { Course } from "../dataCourse"
+import { Course } from "../../types/type";
 
 
 export const htmlcourse: Course = {
   id: 1,
   slug: "html",
-  title: "Курс по HTML",
+  image: "/cardImage/2149901786.jpg",
+  title: "Научитесь верстать сайты правильно!",
   subTitle: "Гипертекстовая разметка",
   description: "Полный курс по HTML5 с нуля. Изучите все аспекты современного HTML.",
   level: "Начинающий",

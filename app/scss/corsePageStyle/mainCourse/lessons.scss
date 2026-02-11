@@ -11,7 +11,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(0, 0, 0);
     padding: {
         top: 2rem;
         bottom: 2rem;
@@ -80,10 +80,13 @@
   min-height: 600px;
   background-color: #151515;
   transition: box-shadow .2s ease-in-out;
+  @media screen and (max-width: 768px) {
+    min-height: 400px;
+  }
 }
 .lsn-material {
   border-radius: 12px;
-  padding: 35px;
+  padding: 15px;
   margin-bottom: 40px;
 }
 .lsn-pagination {
@@ -95,7 +98,7 @@
 }
 .lsn-prev-btn {
   padding: 14px 28px;
-  background: #000000;
+  background: #ffffff0f;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -110,7 +113,7 @@
 }
 .lsn-next-btn {
   padding: 14px 28px;
-  background: #000000;
+  background: #ffffff0f;
   color: $Christmas-and-New-Year-holiday-background-with-bokeh-vintage-color-toned-5-hex;
   border-radius: 8px;
   cursor: pointer;
@@ -125,7 +128,7 @@
 }
 .lsn-finish-btn {
   padding: 14px 28px;
-  background-color: #10b981;
+  background: #ffffff0f;
   color: white;
   border: none;
   border-radius: 8px;
@@ -177,9 +180,6 @@
     font-size: 1.8rem;
   }
   
-  .lsn-material {
-    padding: 25px;
-  }
   .lsn-pagination {
     flex-direction: column;
     gap: 15px;
@@ -323,7 +323,7 @@
 }
 
 .lsn-card-text .lsn-text {
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.7;
   margin: 0;
   color: rgb(255, 255, 255);

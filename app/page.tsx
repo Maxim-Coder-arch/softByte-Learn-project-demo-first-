@@ -21,7 +21,7 @@ export default function Home() {
       <ForWhom />
       <TitleCourses />
       <MainCourses />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

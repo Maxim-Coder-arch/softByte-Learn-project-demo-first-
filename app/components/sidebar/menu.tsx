@@ -47,8 +47,9 @@ export default function Menu(): JSX.Element {
             <nav className="menu">
                 <ul id={fullStyleMenu ? "fullStyleMenu" : ""}>
                     <div className="logotype">
-                        <div className="logotype-image"></div>
-                        <h3>SoftByte Learn</h3>
+                        <h3>
+                            <a href="https://soft-byte-pi.vercel.app/" target="_blank">SoftByte</a>
+                        </h3>
                     </div>
                     {data.map((listItem, index) => <li key={index}>
                         <Link href={"#" + listItem.id}>
@@ -60,7 +61,7 @@ export default function Menu(): JSX.Element {
             <nav className="mobile">
                 <div className="logotype">
                     <div className="logotype-image"></div>
-                    <h3>SoftByte Learn</h3>
+                    <a href="https://soft-byte-pi.vercel.app/" target="_blank">SoftByte</a>
                 </div>
                 <div className="button-mobile-menu" onClick={()=>setOpenMenu(prev=>!prev)}>
                     {

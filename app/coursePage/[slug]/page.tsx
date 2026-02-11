@@ -3,6 +3,8 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { courses } from '@/app/dataCourses/dataCourse';
 import "@/app/scss/corsePageStyle/mainCourse/mainCourse.css";
+import "../../scss/main/main.css";
+import Loader from '@/app/components/defaultComponents/loader';
 export default function Page() {
   const params = useParams();
   const slug = params?.slug as string;
@@ -17,6 +19,7 @@ export default function Page() {
   }
   return (
     <>
+    <Loader />
       <Link href="../" className='to-home'>На главную</Link>
       <div className="course-block">
         <div className="course-page">

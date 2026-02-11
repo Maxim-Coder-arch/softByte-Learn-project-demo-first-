@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Menu from './components/sidebar/menu';
+import Footer from './components/footer/footer';
 export const metadata: Metadata = {
   title: "SoftByte Learn - Образовательная платформа",
   description: "Бесплатные текстовые и видеоуроки по программированию. Изучайте JavaScript, typescript, html, css, scss, c++, React и другие технологии с нуля.",
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         {children}
+        <Footer />
       </body>
     </html>
   );

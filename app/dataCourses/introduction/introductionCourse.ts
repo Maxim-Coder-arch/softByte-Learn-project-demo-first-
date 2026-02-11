@@ -1,6 +1,7 @@
-import { Course } from "../dataCourse"
+import { Course } from "../../types/type";
 export const introductionCourse: Course = {
     id: 1,
+    image: "/cardImage/2151672024.jpg",
     slug: "introduction",
     title: "Введение в компьютерный мир",
     subTitle: "Познакомься с миром программирования",
