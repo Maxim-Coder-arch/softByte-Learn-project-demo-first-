@@ -5,6 +5,8 @@ import { courses } from '@/app/dataCourses/dataCourse';
 import "@/app/scss/corsePageStyle/mainCourse/mainCourse.css";
 import "../../scss/main/main.css";
 import Loader from '@/app/components/defaultComponents/loader';
+import ToHomeButton from '@/app/components/defaultComponents/toHomeButton';
+
 export default function Page() {
   const params = useParams();
   const slug = params?.slug as string;
@@ -20,7 +22,7 @@ export default function Page() {
   return (
     <>
     <Loader />
-      <Link href="../" className='to-home'>На главную</Link>
+      <ToHomeButton />
       <div className="course-block">
         <div className="course-page">
           <div className="course-header">

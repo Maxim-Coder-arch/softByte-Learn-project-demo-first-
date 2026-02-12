@@ -493,8 +493,19 @@ textarea {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-image: url("/7926.jpg");
+  background-size: cover;
+  background-position: center;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.about-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3098039216);
 }
 @media screen and (max-width: 950px) {
   .about-us {
@@ -505,27 +516,32 @@ textarea {
 .about-us-content-route {
   width: 100%;
   height: 100%;
-  background-image: url("/9436976_19109.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about-us-content-route::before {
-  content: "";
+
+.decorate-us {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8431372549);
+  height: 100px;
+}
+
+.decorate-us-1-s {
+  top: 0;
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+.decorate-us-2-s {
+  bottom: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
 
 .about-us-content {
   width: 80%;
   min-height: 500px;
   border: solid 1px rgba(255, 255, 255, 0.135);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   background-color: rgba(255, 255, 255, 0.0470588235);
   border-radius: 20px;
   display: flex;

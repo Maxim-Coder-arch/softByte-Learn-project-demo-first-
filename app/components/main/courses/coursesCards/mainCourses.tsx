@@ -3,9 +3,11 @@ import Link from "next/link";
 import { courses } from "@/app/dataCourses/dataCourse";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import animationConfig from "../../../../configs/animationConfigs/framer.config";
+
 export default function MainCourses() {
     const refParent = useRef(null);
-    const viewChild = useInView(refParent, {once: true, amount: .5});
+    const viewChild = useInView(refParent, {once: true, amount: .2});
     if (courses.length === 0) {
         return (
             <section id="coursesSection">
@@ -17,26 +19,22 @@ export default function MainCourses() {
     }
     return (
         <section id="coursesSection">
-            <div className="main-corses-block">
-                <div className="courses-router" ref={refParent}>
+            <div className="main-corses-block" ref={refParent}>
+                <div className="courses-router">
                     {courses.map((course, index) => {
                         return (
                             <motion.div 
-                                initial={{
-                                    y: "20px",
-                                    opacity: 0
-                                }}
+                                initial={{...animationConfig.verticaleTranslate.initial}}
                                 animate={viewChild ? {
-                                    y: 0,
-                                    opacity: 1
+                                    ...animationConfig.verticaleTranslate.animate
                                 } : {}}
                                 transition={{
                                     delay: index * .1,
-                                    ease: "easeOut",
+                                    ease: animationConfig.animationEasing.easeOut,
                                     duration: .5
                                 }}
                             className={`card-course index${(index % 3) + 1}`}
-                                key={course.id}>
+                                key={index}>
                                     <div className="course-card-image-container">
                                         <div 
                                         style={{backgroundImage: `url(${course.image})`}}

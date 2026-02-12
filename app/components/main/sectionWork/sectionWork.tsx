@@ -1,36 +1,26 @@
 'use client';
 import { JSX, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-const data = [
-    {
-        title: "Много практики",
-        description: "Обучение строится на реальных задачах, с которыми сталкиваются разработчики. Теория — только то, что нужно для старта",
-    },
-    {
-        title: "Ваш наставник",
-        description: "Я сам веду курсы и отвечаю на вопросы. Вы получаете знания напрямую, без посредников"
-    },
-    {
-        title: "Актуальные технологии",
-        description: "Программа включает только то, что действительно нужно для старта в профессии: от основ до востребованных фреймворков"
-    }
-]
+import data from "./sectionWorkData/data.sectionWork";
+import animationConfig from "../../../configs/animationConfigs/framer.config";
+
 export default function SectionWork(): JSX.Element {
     const refParent = useRef(null);
-    const viewChild = useInView(refParent, {once: true, amount: .2});
+    const viewChild = useInView(refParent, {once: true, amount: .5});
     return (
         <section id="formatlearn">
             <div className="section-work" ref={refParent}>
                 <div className="section-work-cards">
                     {data.map((obj, index) => {
                         return (
-                            <motion.div key={index}
-                            initial={{opacity: 0, y: 200}}
-                            animate={viewChild ? {opacity: 1, y: 0} : {}}
+                            <motion.div 
+                            key={index}
+                            initial={{...animationConfig.verticaleTranslate.initial}}
+                            animate={viewChild ? animationConfig.verticaleTranslate.animate : {}}
                             className="main-card"
                             transition={{
                                 duration: .5,
-                                ease: "easeInOut",
+                                ease: animationConfig.animationEasing.easeOut,
                                 delay: .1 * index
                             }}
                             >

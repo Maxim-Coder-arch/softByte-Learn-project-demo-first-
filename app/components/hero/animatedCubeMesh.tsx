@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -25,7 +25,6 @@ const CubeletMesh = ({
   const cubeletsRef = useRef<THREE.Mesh[]>([]);
   const [positions, setPositions] = useState<CubeletPosition[]>([]);
 
-  const cubeSize = 3;
   const cubeletSize = 0.7;
   const gap = 0.1;
   const gridSize = 5;
@@ -67,7 +66,6 @@ const CubeletMesh = ({
       const maxDistance = 8;
       const influence = Math.max(0, 1 - distance / maxDistance);
 
-      // Индивидуальная задержка для каждого кубика
       const delayFactor = 0.08 + (index % 10) * 0.02;
       const speed = 0.08 * delayFactor;
       const strength = 0.3;
@@ -132,11 +130,10 @@ export default function AnimatedCubeMesh() {
   return (
     <div className="mesh-cube">
       <Canvas
-        shadows // Включаем систему теней
+        shadows
         className="mesh-cub"
         style={{ width: "100%", height: "100%" }}
       >
-        {/* Убрали дублирующую камеру из Canvas props, используем только PerspectiveCamera */}
         <PerspectiveCamera 
           makeDefault 
           position={[0, 0, 8]} 
@@ -165,11 +162,9 @@ export default function AnimatedCubeMesh() {
           shadow-radius={2}
         />
         
-        {/* Вспомогательные источники света для лучшего объема */}
         <pointLight position={[-5, 5, 10]} intensity={0.5} color="#f8a6e6" />
         <pointLight position={[0, 0, 15]} intensity={0.3} color="#f8f1a5" />
 
-        {/* Plane для отбрасывания теней */}
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, -8, 0]}

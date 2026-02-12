@@ -1,7 +1,6 @@
-// app/coursePage/[slug]/lessons/[lessonsSlug]/page.tsx
 'use client';
 import { useParams, useRouter } from 'next/navigation';
-import { courses, Paragraph } from '@/app/dataCourses/dataCourse';
+import { courses, Paragraph } from '../../../../dataCourses/dataCourse';
 import "@/app/scss/corsePageStyle/mainCourse/lessons.css";
 import Link from 'next/link';
 
@@ -32,8 +31,6 @@ export default function LessonPage() {
       </div>
     );
   }
-
-  // Функция для рендеринга отдельного параграфа
   const renderParagraph = (paragraph: Paragraph) => {
     const getCardClass = () => {
       switch (paragraph.type) {
@@ -46,11 +43,10 @@ export default function LessonPage() {
         default: return 'lsn-card-text';
       }
     };
-
     const renderContent = () => {
       switch (paragraph.type) {
         case 'heading':
-          const HeadingTag = `h${paragraph.level || 2}`
+          const HeadingTag = `h${paragraph.level || 2}`;
           return (
             <HeadingTag className={`lsn-heading-${paragraph.level}`}>
               {paragraph.content}
@@ -92,7 +88,6 @@ export default function LessonPage() {
           );
           
         case 'code':
-          // Для кода возвращаем готовую структуру без дополнительной обертки
           return (
             <div className="lsn-code-content">
               <div className="lsn-code-header">
@@ -103,7 +98,6 @@ export default function LessonPage() {
                   className="lsn-copy-btn"
                   onClick={() => {
                     navigator.clipboard.writeText(paragraph.content);
-                    // Можно добавить уведомление о копировании
                   }}
                 >
                   Копировать
@@ -120,8 +114,6 @@ export default function LessonPage() {
       }
     };
 
-    // Определяем, нужно ли показывать иконку для типа контента
-    // Для кода не используем общую карточку, так как у него своя структура
     if (paragraph.type === 'code') {
       return (
         <div 
@@ -148,7 +140,6 @@ export default function LessonPage() {
     );
   };
 
-  // Если хотите просто каждый параграф в отдельной карточке (без группировки)
   const renderIndividualCards = () => {
     return lesson.paragraphs.map(paragraph => renderParagraph(paragraph));
   };

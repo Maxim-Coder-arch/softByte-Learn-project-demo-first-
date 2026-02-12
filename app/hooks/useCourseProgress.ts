@@ -1,4 +1,3 @@
-// app/hooks/useCourseProgress.ts
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -8,7 +7,7 @@ interface CourseProgress {
     [lessonSlug: string]: {
       completed: boolean;
       watchedAt?: Date;
-      progress?: number; // от 0 до 100 для длинных уроков
+      progress?: number;
     };
   };
 }
@@ -16,7 +15,6 @@ interface CourseProgress {
 export function useCourseProgress() {
   const [progress, setProgress] = useState<CourseProgress>({});
   
-  // Загружаем прогресс из localStorage при инициализации
   useEffect(() => {
     const savedProgress = localStorage.getItem('courseProgress');
     if (savedProgress) {
@@ -28,12 +26,10 @@ export function useCourseProgress() {
     }
   }, []);
   
-  // Сохраняем прогресс в localStorage при изменении
   useEffect(() => {
     localStorage.setItem('courseProgress', JSON.stringify(progress));
   }, [progress]);
   
-  // Отметить урок как пройденный
   const markLessonAsCompleted = (courseSlug: string, lessonSlug: string) => {
     setProgress(prev => ({
       ...prev,
@@ -48,7 +44,6 @@ export function useCourseProgress() {
     }));
   };
   
-  // Обновить прогресс урока (для частичного просмотра)
   const updateLessonProgress = (courseSlug: string, lessonSlug: string, progressPercentage: number) => {
     setProgress(prev => ({
       ...prev,
@@ -63,7 +58,6 @@ export function useCourseProgress() {
     }));
   };
   
-  // Получить прогресс по курсу
   const getCourseProgress = (courseSlug: string, totalLessons: number) => {
     const courseData = progress[courseSlug];
     if (!courseData) return 0;
@@ -72,17 +66,14 @@ export function useCourseProgress() {
     return Math.round((completedLessons / totalLessons) * 100);
   };
   
-  // Получить прогресс по уроку
   const getLessonProgress = (courseSlug: string, lessonSlug: string) => {
     return progress[courseSlug]?.[lessonSlug]?.progress || 0;
   };
   
-  // Проверить, пройден ли урок
   const isLessonCompleted = (courseSlug: string, lessonSlug: string) => {
     return progress[courseSlug]?.[lessonSlug]?.completed || false;
   };
   
-  // Сбросить прогресс курса
   const resetCourseProgress = (courseSlug: string) => {
     setProgress(prev => {
       const newProgress = { ...prev };

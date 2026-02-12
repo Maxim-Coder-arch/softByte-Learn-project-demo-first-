@@ -10,10 +10,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   list-style-type: none;
   text-decoration: none;
   background-color: #000;
+  overflow-x: hidden;
 }
 
 h1,

@@ -2,28 +2,8 @@
 import Link from "next/link";
 import { JSX, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-const data = [
-    {
-        item: "Главная",
-        id: "home"
-    },
-    {
-        item: "О проекте",
-        id: "project"
-    },
-    {
-        item: "Формат обучения",
-        id: "formatlearn"
-    },
-    {
-        item: "Курсы",
-        id: "coursesSection",
-    },
-    {
-        item: "Контакты",
-        id: "footer"
-    }
-];
+import data from "./sidebarData/sidebar.data";
+
 export default function Menu(): JSX.Element {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [fullStyleMenu, setFullStyleMenu] = useState<boolean>(false);
