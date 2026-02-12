@@ -441,6 +441,8 @@ body {
   top: 1rem;
   right: 2rem;
   background: #2c2c2c;
+  z-index: 1001;
+  position: fixed;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 20px;

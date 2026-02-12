@@ -12,7 +12,7 @@ export const benefitsData: BenefitItem[] = [
     id: 1,
     title: "Начинающие с нуля",
     description: "Пошаговое руководство с самых основ. Начните свой путь в веб-разработке без предварительных знаний и опыта.",
-    url: "/",
+    url: "/roadmap",
     image: "/beginner-path.jpg",
     label: "Roadmap для новичков"
   },
@@ -20,7 +20,7 @@ export const benefitsData: BenefitItem[] = [
     id: 2,
     title: "Самоучки, желающие систематизировать знания",
     description: "Структурированная программа, которая заполнит пробелы в знаниях и выстроит полную картину.",
-    url: "/",
+    url: "/selfStudy",
     image: "/systematization.jpg",
     label: "Систематизация знаний"
   },
