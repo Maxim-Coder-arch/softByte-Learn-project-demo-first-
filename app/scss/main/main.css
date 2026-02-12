@@ -501,22 +501,6 @@ textarea {
     flex-direction: column;
   }
 }
-.about-us::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  top: 0;
-  background-image: linear-gradient(black, rgba(255, 255, 255, 0));
-}
-.about-us::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  bottom: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), black);
-}
 
 .about-us-content-route {
   width: 100%;
