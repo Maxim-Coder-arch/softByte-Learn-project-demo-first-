@@ -254,8 +254,6 @@ textarea {
   transition: all 0.4s ease-out;
   overflow: hidden;
   border-radius: 0;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 .menu ul::before {
   content: "";
@@ -263,6 +261,10 @@ textarea {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5215686275);
   transition: background-color 0.4s ease-out;
+}
+.menu ul {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media screen and (max-width: 700px) {
   .menu ul {
@@ -278,12 +280,14 @@ textarea {
   padding-right: 20px;
   transition: background-color 0.4s ease-in-out;
   position: relative;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 500;
-  font-style: normal;
 }
 .menu ul a:hover {
   background-color: rgba(224, 216, 216, 0.1529411765);
+}
+.menu ul a {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .mobile {
@@ -1463,4 +1467,171 @@ textarea {
   height: 100%;
   transform: scaleX(0);
   background: rgba(255, 255, 255, 0.5882352941);
+}
+
+.article-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-image: url("/7926.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+.article-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3098039216);
+}
+
+.articles-section {
+  width: 95%;
+  border-radius: 20px;
+  border: solid 1px rgba(255, 255, 255, 0.135);
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.0470588235);
+  display: flex;
+  overflow: hidden;
+}
+@media screen and (max-width: 620px) {
+  .articles-section {
+    flex-direction: column;
+  }
+}
+
+.generic-article {
+  width: 50%;
+  min-height: 500px;
+}
+@media screen and (max-width: 620px) {
+  .generic-article {
+    width: 100%;
+  }
+}
+
+.article-image-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.article-image-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/2148895306.jpg");
+}
+
+.generic-image-block-title {
+  border-radius: 20px;
+  border: solid 1px rgba(255, 255, 255, 0.482);
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.2156862745);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.generic-image-block-title h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+}
+
+.articles-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 20px;
+  align-items: center;
+}
+
+.article-card {
+  width: 250px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6470588235);
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.744);
+  text-align: center;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 20px;
+  letter-spacing: 1px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2039215686);
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+}
+.article-card:hover {
+  background-color: rgba(255, 255, 255, 0.3803921569);
+  color: rgb(0, 0, 0);
+}
+
+.article-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.article-content {
+  width: 90%;
+  color: white;
+}
+
+.article-page-subtitle {
+  width: 100%;
+  background-color: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.2039215686);
+  border-radius: 20px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.article-page-subtitle h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.article-page-paragraph {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.article-page-paragraph p {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: rgb(207, 206, 206);
+  letter-spacing: 1px;
+  line-height: 20px;
 }/*# sourceMappingURL=main.css.map */

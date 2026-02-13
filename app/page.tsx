@@ -1,6 +1,7 @@
 import Loader from './components/defaultComponents/loader';
 import HeroSection from './components/hero/heroSection';
 import AboutUs from './components/main/aboutUs/aboutUs';
+import Articles from './components/main/articles/articles';
 import MainCourses from './components/main/courses/coursesCards/mainCourses';
 import TitleCourses from './components/main/courses/titleCourses';
 import ForWhom from './components/main/forWhom/forWhom';
@@ -21,6 +22,7 @@ export default function Home() {
       <ForWhom />
       <TitleCourses />
       <MainCourses />
+      <Articles />
     </>
   );
 }
