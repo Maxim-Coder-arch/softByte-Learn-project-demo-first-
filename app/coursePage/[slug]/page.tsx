@@ -1,16 +1,16 @@
-'use client';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
-import { courses } from '@/app/dataCourses/dataCourse';
+"use client";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { courses } from "@/app/dataCourses/dataCourse";
 import "@/app/scss/corsePageStyle/mainCourse/mainCourse.css";
 import "../../scss/main/main.css";
-import Loader from '@/app/components/defaultComponents/loader';
-import ToHomeButton from '@/app/components/defaultComponents/toHomeButton';
+import Loader from "@/app/components/defaultComponents/loader";
+import ToHomeButton from "@/app/generic-components/toHomeButton";
 
 export default function Page() {
   const params = useParams();
   const slug = params?.slug as string;
-  const course = courses.find(c => c.slug === slug);
+  const course = courses.find((c) => c.slug === slug);
   if (!course) {
     return (
       <div className="course-not-found">
@@ -19,9 +19,19 @@ export default function Page() {
       </div>
     );
   }
+  console.log({
+  bodyOverflow: getComputedStyle(document.body).overflow,
+  htmlOverflow: getComputedStyle(document.documentElement).overflow,
+  bodyHeight: getComputedStyle(document.body).height,
+  htmlHeight: getComputedStyle(document.documentElement).height,
+  scrollTop: document.documentElement.scrollTop,
+  scrollHeight: document.documentElement.scrollHeight,
+  innerHeight: window.innerHeight,
+});
+
   return (
     <>
-    <Loader />
+      <Loader />
       <ToHomeButton />
       <div className="course-block">
         <div className="course-page">
@@ -53,9 +63,7 @@ export default function Page() {
                     href={`/coursePage/${course.slug}/lessons/${lesson.slug}`}
                     className="lesson-card"
                   >
-                    <div className="lesson-number">
-                      {index + 1}
-                    </div>
+                    <div className="lesson-number">{index + 1}</div>
                     <div className="lesson-content">
                       <h3 className="lesson-title">{lesson.title}</h3>
                       <p className="lesson-description">{lesson.description}</p>
@@ -64,9 +72,7 @@ export default function Page() {
                         <span>Видео урок</span>
                       </div>
                     </div>
-                    <div className="lesson-arrow">
-                      →
-                    </div>
+                    <div className="lesson-arrow">→</div>
                   </Link>
                 ))}
             </div>

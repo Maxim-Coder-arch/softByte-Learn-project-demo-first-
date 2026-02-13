@@ -3,6 +3,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { courses, Paragraph } from '../../../../dataCourses/dataCourse';
 import "@/app/scss/corsePageStyle/mainCourse/lessons.css";
 import Link from 'next/link';
+import React from 'react';
 
 export default function LessonPage() {
   const params = useParams();
@@ -47,12 +48,11 @@ export default function LessonPage() {
       switch (paragraph.type) {
         case 'heading':
           const HeadingTag = `h${paragraph.level || 2}`;
-          return (
-            <HeadingTag className={`lsn-heading-${paragraph.level}`}>
-              {paragraph.content}
-            </HeadingTag>
+          return React.createElement(
+            HeadingTag,
+            { className: `lsn-heading-${paragraph.level || 2}` },
+            paragraph.content
           );
-          
         case 'text':
           return <p className="lsn-text">{paragraph.content}</p>;
           

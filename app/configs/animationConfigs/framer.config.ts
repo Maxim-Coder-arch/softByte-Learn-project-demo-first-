@@ -1,4 +1,6 @@
-const framerConfig = {
+import { IFramerConfig } from "@/app/types/framerConfig.types";
+
+const framerConfig: IFramerConfig = {
   verticaleTranslate: {
     initial: {
       y: 30,
@@ -12,7 +14,7 @@ const framerConfig = {
   animationEasing: {
     easeOut: "easeOut"
   } as const
-}
+};
 
 export default framerConfig;
 

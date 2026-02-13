@@ -7,14 +7,7 @@
 // 2. Убираем отступы и поля у html и body
 html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  list-style-type: none;
-  text-decoration: none;
-  background-color: #000;
-  scroll-behavior: smooth;
+  margin: 0; padding: 0; width: 100%; /* ← вместо 100vw */ min-height: fit-content; overflow-x: clip; /* ← безопаснее, чем hidden */ background-color: #000;
 }
 
 // 3. Сбрасываем отступы у заголовков, списков, параграфов, блоков

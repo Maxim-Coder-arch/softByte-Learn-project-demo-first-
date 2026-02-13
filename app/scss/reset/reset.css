@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -8,12 +9,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  list-style-type: none;
-  text-decoration: none;
+  width: 100%; /* ← вместо 100vw */
+  min-height: fit-content;
+  overflow-x: clip; /* ← безопаснее, чем hidden */
   background-color: #000;
-  scroll-behavior: smooth;
 }
 
 h1,
