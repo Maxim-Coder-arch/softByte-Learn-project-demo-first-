@@ -18,9 +18,13 @@ const data: ISidebarData[] = [
         id: "coursesSection",
     },
     {
+        item: "Статьи",
+        id: "articles"
+    },
+    {
         item: "Контакты",
         id: "footer"
-    }
+    },
 ];
 
 export default data;

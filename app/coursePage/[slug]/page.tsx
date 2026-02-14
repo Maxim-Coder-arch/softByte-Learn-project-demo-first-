@@ -5,7 +5,6 @@ import { courses } from "@/app/dataCourses/dataCourse";
 import "@/app/scss/corsePageStyle/mainCourse/mainCourse.css";
 import "../../scss/main/main.css";
 import Loader from "@/app/components/defaultComponents/loader";
-import ToHomeButton from "@/app/generic-components/toHomeButton";
 
 export default function Page() {
   const params = useParams();
@@ -32,7 +31,6 @@ export default function Page() {
   return (
     <>
       <Loader />
-      <ToHomeButton />
       <div className="course-block">
         <div className="course-page">
           <div className="course-header">

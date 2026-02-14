@@ -1,12 +1,5 @@
-export interface IArticle {
-  slug: string;
-  title: string;
-  description: string;
-  content: {
-    type: "paragraph" | "subtitle";
-    text: string;
-  }[];
-}
+
+import { IArticle } from "@/app/types/data.articles.type";
 
 export const articles: IArticle[] = [
   {

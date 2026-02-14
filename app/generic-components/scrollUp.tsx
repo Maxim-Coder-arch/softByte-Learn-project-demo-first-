@@ -9,6 +9,6 @@ export default function ScrollUp() {
   };
 
   return (
-    <div className="scroll-up" onClick={handleScroll}></div>
+    <div className="scroll-up nav-element" onClick={handleScroll}></div>
   )
 }
