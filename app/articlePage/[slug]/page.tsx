@@ -22,7 +22,6 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       <Loader />
-      <ToHomeButton />
       <div className="article-page">
         <div className="article-content">
           {article.content.map((block, idx) => {

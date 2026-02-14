@@ -1536,6 +1536,27 @@
 .nav-element {
     width: 20px;
     height: 20px;
+    cursor: pointer;
+    background-color: #ffffff45;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    outline: solid 2px rgba(255, 255, 255, 0.172);
+    outline-offset: 3px;
+    display: grid;
+    place-items: center;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+.to-home-image {
+    &::before {
+        background-image: url("/icons/home.png");
+    }
 }
 
 .generic-navigation {

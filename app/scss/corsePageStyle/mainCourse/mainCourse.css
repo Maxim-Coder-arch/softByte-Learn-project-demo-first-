@@ -251,24 +251,4 @@ body {
 .course-not-found {
   padding: 50px;
   text-align: center;
-}
-
-.to-home-image {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2705882353);
-  border-radius: 50%;
-  backdrop-filter: blur(5px);
-  outline: solid 2px rgba(255, 255, 255, 0.172);
-  outline-offset: 3px;
-  display: grid;
-  place-items: center;
-}
-.to-home-image::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 70%;
-  background-size: cover;
-  background-position: center;
-  background-image: url("/icons/home.png");
 }/*# sourceMappingURL=mainCourse.css.map */
