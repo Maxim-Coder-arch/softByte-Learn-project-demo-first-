@@ -1422,15 +1422,15 @@ textarea {
 .scroll-up {
   width: 30px;
   height: 30px;
-  z-index: 1000;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.1058823529);
   border-radius: 50%;
   backdrop-filter: blur(5px);
   outline: solid 2px rgba(255, 255, 255, 0.172);
   outline-offset: 3px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .scroll-up::before {
   content: "";
@@ -1664,6 +1664,7 @@ textarea {
   outline-offset: 3px;
   display: grid;
   place-items: center;
+  position: relative;
 }
 .nav-element::before {
   content: "";
