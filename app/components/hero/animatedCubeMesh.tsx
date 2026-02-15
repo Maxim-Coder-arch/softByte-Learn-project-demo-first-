@@ -142,10 +142,8 @@ export default function AnimatedCubeMesh() {
           far={1000}
         />
 
-        {/* Ambient light для общего освещения */}
         <ambientLight intensity={0.4} />
         
-        {/* Основной направленный свет, который создаст тени */}
         <directionalLight
           position={[10, 10, 5]}
           intensity={1.2}

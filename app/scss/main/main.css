@@ -1687,4 +1687,97 @@ textarea {
   display: flex;
   justify-content: center;
   column-gap: 10px;
+}
+
+.faq-title {
+  color: #FFFEF6;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.1rem;
+}
+@media screen and (max-width: 520px) {
+  .faq-title {
+    font-size: 1.4rem;
+  }
+}
+
+.faq-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.faq-block {
+  width: 90%;
+  min-height: 500px;
+  border: solid 1px rgba(255, 255, 255, 0.2039215686);
+  background-color: rgba(248, 248, 248, 0.063);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.question-block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.question-block p {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.913);
+  letter-spacing: 1px;
+  background-color: rgb(26, 26, 26);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.faq-item {
+  width: 100%;
+  min-height: 50px;
+  border: solid 1px rgba(255, 255, 255, 0.2039215686);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.faq-item h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.913);
+  letter-spacing: 1px;
+  max-width: 90%;
+}
+.faq-item button {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.913);
+  cursor: pointer;
+}
+
+.active-item-question {
+  background-color: rgba(51, 51, 51, 0.419);
 }/*# sourceMappingURL=main.css.map */

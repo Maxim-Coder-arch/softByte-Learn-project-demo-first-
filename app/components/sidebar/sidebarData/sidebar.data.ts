@@ -22,6 +22,10 @@ const data: ISidebarData[] = [
         id: "articles"
     },
     {
+        item: "FaQ",
+        id: "faq"
+    },
+    {
         item: "Контакты",
         id: "footer"
     },

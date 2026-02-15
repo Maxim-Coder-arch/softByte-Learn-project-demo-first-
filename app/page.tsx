@@ -4,6 +4,7 @@ import AboutUs from './components/main/aboutUs/aboutUs';
 import Articles from './components/main/articles/articles';
 import MainCourses from './components/main/courses/coursesCards/mainCourses';
 import TitleCourses from './components/main/courses/titleCourses';
+import Faq from './components/main/faq/faq';
 import ForWhom from './components/main/forWhom/forWhom';
 import SectionWork from './components/main/sectionWork/sectionWork';
 import TitleSectionWork from './components/main/sectionWork/titleSectionWork';
@@ -23,6 +24,7 @@ export default function Home() {
       <TitleCourses />
       <MainCourses />
       <Articles />
+      <Faq />
     </>
   );
 }
