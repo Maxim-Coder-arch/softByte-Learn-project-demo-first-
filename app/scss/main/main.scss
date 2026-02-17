@@ -615,6 +615,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 2;
+    backdrop-filter: blur(10px);
     padding: {
         top: 20px;
         bottom: 20px;
@@ -1510,7 +1512,6 @@
     rotate: 180deg;
 }
 .navigation-components-block {
-    // width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -1531,8 +1532,8 @@
 }
 
 .nav-element {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     background-color: #ffffff45;
     border-radius: 50%;
@@ -1559,7 +1560,7 @@
 
 .generic-navigation {
     position: fixed;
-    bottom: 10px;
+    bottom: 20px;
     width: 100%;
     z-index: 1001;
     display: flex;
@@ -1651,9 +1652,19 @@
 .active-item-question {
     background-color: rgba(51, 51, 51, 0.419)
 }
-
-
-
+.floating-effect {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: 0;
+    background-image: url("/fragments/409843503_f2aa08ac-bfe1-4133-b008-9e364404e7a4-Photoroom.png");
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}
 
 
 

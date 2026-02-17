@@ -18,7 +18,6 @@ const GenericGridPage: React.FC<GenericGridPageProps> = ({
   return (
     <>
       <Loader />
-      <ToHomeButton />
       <div className={pageClass}>
         <div className="roadmap-blur-sphere roadmap-blur-sphere--top" />
         <div className="roadmap-blur-sphere roadmap-blur-sphere--bottom" />

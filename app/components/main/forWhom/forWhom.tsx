@@ -1,7 +1,7 @@
 'use client';
 import { JSX, useRef } from "react";
 import TitleForWhom from "./titleForWhom";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { benefitsData } from "./forwhom.data";
 import Link from "next/link";
 import animationConfig from "../../../configs/animationConfigs/framer.config";
@@ -9,12 +9,41 @@ import animationConfig from "../../../configs/animationConfigs/framer.config";
 export default function ForWhom(): JSX.Element {
     const refParent = useRef(null);
     const isInView = useInView(refParent, { once: true, amount: 0.3 });
+    const floatingEffectAnimationReference = useRef(null);
 
+    const { scrollYProgress } = useScroll({
+        target: floatingEffectAnimationReference,
+        offset: ["start end", "end start"]
+    });
+    const xOffset = useTransform(
+        scrollYProgress, 
+        [0, 1], 
+        [300, -1000]
+    );
+
+    const yOffset = useTransform(
+        scrollYProgress, 
+        [0, 1], 
+        [300, -500]
+    );
+
+    const rotateOffset = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, 360]
+    );
 
     return (
         <>
             <TitleForWhom />
-            <div className="for-whom">
+            <div className="for-whom" ref={floatingEffectAnimationReference}>
+                <motion.div 
+                style={{ 
+                    x: xOffset,
+                    y: yOffset,
+                    rotate: rotateOffset
+                }}
+                className="floating-stone-effect floating-effect" />
                 <div 
                     className="border-for-whom" 
                     ref={refParent}
