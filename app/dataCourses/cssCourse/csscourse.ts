@@ -234,6 +234,253 @@ p {
           content: "CSS — это не набор свойств, а система правил и приоритетов. Теперь вы знаете, почему стили иногда не применяются. В следующем уроке мы разберём Box Model и создадим первую карточку. Здесь CSS начнёт превращаться в дизайн."
         }
       ]
+    },
+    {
+      id: "css-2",
+      slug: "css2",
+      title: "Box Model и визуальная геометрия. Делаем красивую карточку",
+      description: "Подробно разбираем Box Model: content, padding, border, margin, box-sizing, margin collapsing. Учимся управлять отступами, используем сокращённые свойства, делаем reset через * и создаём аккуратную карточку в тёмном стиле.",
+      duration: "Длительность 8:38",
+      videoId: "ZOHxSAFz38g",
+      order: 2,
+      paragraphs: [
+        {
+          id: "p1",
+          type: "heading",
+          content: "Box Model — фундамент визуальной геометрии"
+        },
+        {
+          id: "p2",
+          type: "text",
+          content: "Каждый HTML-элемент в браузере — это прямоугольник. Не текст. Не «блок». А именно прямоугольная коробка. И если вы не понимаете, из чего она состоит, верстка будет постоянно «ломаться»."
+        },
+        {
+          id: "p3",
+          type: "heading",
+          content: "Из чего состоит Box Model"
+        },
+        {
+          id: "p4",
+          type: "text",
+          content: "Любой элемент состоит из четырёх частей: content (контент), padding (внутренний отступ), border (рамка) и margin (внешний отступ). Браузер считает размеры именно по этой формуле."
+        },
+        {
+          id: "p5",
+          type: "code",
+          content: `
+    .card {
+      width: 300px;      /* Ширина только контента */
+      padding: 20px;     /* Внутренний отступ со всех сторон */
+      border: 2px solid #333; /* Рамка: толщина, стиль, цвет */
+      margin: 30px;      /* Внешний отступ со всех сторон */
+    }
+          `
+        },
+        {
+          id: "p6",
+          type: "text",
+          content: "width: 300px — это ширина только области content. Padding добавляется сверху. Border тоже увеличивает итоговый размер. Margin не входит в размер блока, но влияет на расстояние до других элементов."
+        },
+        {
+          id: "p7",
+          type: "heading",
+          content: "Типичная ошибка новичков"
+        },
+        {
+          id: "p8",
+          type: "text",
+          content: "Новички задают width: 300px, добавляют padding: 20px и удивляются, почему блок стал шире 300px. Потому что по умолчанию используется box-sizing: content-box."
+        },
+        {
+          id: "p9",
+          type: "heading",
+          content: "content-box vs border-box"
+        },
+        {
+          id: "p10",
+          type: "code",
+          content: `
+    .card {
+      box-sizing: content-box; /* Значение по умолчанию */
+    }
+          `
+        },
+        {
+          id: "p11",
+          type: "text",
+          content: "content-box означает: width учитывает только контент. Padding и border прибавляются сверху."
+        },
+        {
+          id: "p12",
+          type: "code",
+          content: `
+    .card {
+      box-sizing: border-box; /* Правильный современный подход */
+    }
+          `
+        },
+        {
+          id: "p13",
+          type: "text",
+          content: "border-box означает: width включает в себя padding и border. Это делает расчёты предсказуемыми. Поэтому в реальных проектах почти всегда используют border-box."
+        },
+        {
+          id: "p14",
+          type: "heading",
+          content: "Базовый reset и селектор *"
+        },
+        {
+          id: "p15",
+          type: "code",
+          content: `
+    * {
+      margin: 0;              /* Убираем стандартные внешние отступы браузера */
+      padding: 0;             /* Убираем стандартные внутренние отступы */
+      box-sizing: border-box; /* Чтобы размеры считались удобно */
+    }
+          `
+        },
+        {
+          id: "p16",
+          type: "text",
+          content: "Селектор * выбирает все элементы на странице. Мы убираем дефолтные отступы браузера (они отличаются в Chrome, Firefox и других) и сразу включаем border-box для всей страницы."
+        },
+        {
+          id: "p17",
+          type: "heading",
+          content: "Сокращённые (shorthand) свойства"
+        },
+        {
+          id: "p18",
+          type: "text",
+          content: "В CSS можно писать свойства полностью или сокращённо. Например, вместо background-color можно написать background."
+        },
+        {
+          id: "p19",
+          type: "code",
+          content: `
+    .card {
+      background-color: #111; /* Только цвет фона */
+    }
+
+    .card {
+      background: #111; /* Краткая запись */
+    }
+          `
+        },
+        {
+          id: "p20",
+          type: "text",
+          content: "background — это обобщённое свойство. Оно может включать цвет, изображение, позицию и другие параметры. Если указать только цвет, всё равно будет работать."
+        },
+        {
+          id: "p21",
+          type: "code",
+          content: `
+    .card {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #2a2a2a;
+    }
+
+    .card {
+      border: 1px solid #2a2a2a; /* Краткая запись */
+    }
+          `
+        },
+        {
+          id: "p22",
+          type: "text",
+          content: "border — тоже shorthand. В одной строке мы задаём толщину, стиль линии и цвет."
+        },
+        {
+          id: "p23",
+          type: "heading",
+          content: "Box-shadow и визуальная глубина"
+        },
+        {
+          id: "p24",
+          type: "code",
+          content: `
+    .card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+          `
+        },
+        {
+          id: "p25",
+          type: "text",
+          content: "Первое значение — смещение по оси X. Второе — по оси Y. Третье — размытие. Цвет — тень. Так создаётся ощущение глубины."
+        },
+        {
+          id: "p26",
+          type: "heading",
+          content: "Margin collapsing"
+        },
+        {
+          id: "p27",
+          type: "text",
+          content: "Если два вертикальных margin соприкасаются, они не складываются, а берётся большее значение. Это называется margin collapsing."
+        },
+        {
+          id: "p28",
+          type: "code",
+          content: `
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+          `
+        },
+        {
+          id: "p29",
+          type: "text",
+          content: "Итоговый отступ будет 30px, а не 50px. Потому что margin схлопывается."
+        },
+        {
+          id: "p30",
+          type: "heading",
+          content: "Финальный пример — минималистичная карточка"
+        },
+        {
+          id: "p31",
+          type: "code",
+          content: `
+    body {
+      background: #0f0f12; /* Тёмный фон страницы */
+      font-family: Arial, sans-serif; /* Базовый шрифт */
+    }
+
+    .card {
+      width: 320px; /* Фиксированная ширина */
+      padding: 24px; /* Внутренний воздух */
+      background: #18181c; /* Цвет карточки */
+      border: 1px solid #2a2a2a; /* Лёгкая рамка */
+      border-radius: 12px; /* Скругление углов */
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5); /* Мягкая тень */
+    }
+
+    .card h2 {
+      margin-bottom: 12px; /* Отступ вниз */
+      font-size: 20px; /* Размер заголовка */
+      color: #ffffff; /* Белый текст */
+    }
+
+    .card p {
+      font-size: 14px; /* Размер текста */
+      color: #b3b3b3; /* Более мягкий цвет */
+    }
+          `
+        },
+        {
+          id: "p32",
+          type: "text",
+          content: "Здесь мы управляем геометрией через padding, создаём глубину через box-shadow, используем border-box для корректных расчётов и контролируем внешний воздух через margin."
+        }
+      ]
     }
   ]
 }
