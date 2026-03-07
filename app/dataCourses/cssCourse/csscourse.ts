@@ -481,6 +481,359 @@ p {
           content: "Здесь мы управляем геометрией через padding, создаём глубину через box-shadow, используем border-box для корректных расчётов и контролируем внешний воздух через margin."
         }
       ]
+    },
+    {
+      id: "css-3",
+      slug: "css3",
+      title: "Display и базовая компоновка. Как располагать элементы на странице",
+      description: "Разбираем фундамент компоновки в CSS: display block, inline и inline-block. Учимся располагать элементы в строку, управлять переполнением через overflow, контролировать размеры через min/max и правильно центрировать элементы.",
+      duration: "Длительность 10:33",
+      videoId: "OU3hA6ridyQ?list=PLeLdJcnxYFTjiAGthA5aut347Xtyi2f9g",
+      order: 3,
+      paragraphs: [
+
+        {
+          id: "p1",
+          type: "heading",
+          content: "Display — как браузер размещает элементы"
+        },
+
+        {
+          id: "p2",
+          type: "text",
+          content: "Когда браузер рисует страницу, он должен решить не только как элементы выглядят, но и как они расположены. Именно за это отвечает свойство display. Оно определяет поведение элемента в потоке документа: занимает ли он всю строку, может ли стоять рядом с другими элементами и принимает ли размеры."
+        },
+
+        {
+          id: "p3",
+          type: "text",
+          content: "Практически вся компоновка интерфейсов начинается именно с display. Прежде чем изучать Flexbox или Grid, важно понять базовое поведение элементов."
+        },
+
+        {
+          id: "p4",
+          type: "heading",
+          content: "display: block"
+        },
+
+        {
+          id: "p5",
+          type: "text",
+          content: "Block-элементы занимают всю доступную ширину строки и автоматически переносятся на новую строку. Это означает, что каждый такой элемент начинается с новой строки и располагается под предыдущим."
+        },
+
+        {
+          id: "p6",
+          type: "code",
+          content: `
+    div {
+      display: block;
+    }
+    `
+        },
+
+        {
+          id: "p7",
+          type: "text",
+          content: "Большинство структурных HTML-элементов являются block по умолчанию: div, section, header, footer, article, p, h1–h6."
+        },
+
+        {
+          id: "p8",
+          type: "text",
+          content: "Block-элементы принимают width и height, а также все виды margin и padding. Поэтому именно они чаще всего используются как контейнеры для интерфейса."
+        },
+
+        {
+          id: "p9",
+          type: "heading",
+          content: "display: inline"
+        },
+
+        {
+          id: "p10",
+          type: "text",
+          content: "Inline-элементы ведут себя как текст внутри строки. Они не начинают новую строку и располагаются рядом друг с другом, пока хватает места."
+        },
+
+        {
+          id: "p11",
+          type: "code",
+          content: `
+    span {
+      display: inline;
+    }
+    `
+        },
+
+        {
+          id: "p12",
+          type: "text",
+          content: "Главная особенность inline-элементов — они не принимают width и height. Их размер определяется содержимым."
+        },
+
+        {
+          id: "p13",
+          type: "text",
+          content: "Типичные inline-элементы: span, a, strong, em."
+        },
+
+        {
+          id: "p14",
+          type: "heading",
+          content: "display: inline-block"
+        },
+
+        {
+          id: "p15",
+          type: "text",
+          content: "inline-block — это гибридное поведение. Элемент остаётся в строке, но при этом принимает width и height как обычный блок."
+        },
+
+        {
+          id: "p16",
+          type: "code",
+          content: `
+    .card {
+      display: inline-block;
+      width: 250px;
+    }
+    `
+        },
+
+        {
+          id: "p17",
+          type: "text",
+          content: "Это позволяет располагать несколько элементов в одну строку, при этом контролируя их размеры."
+        },
+
+        {
+          id: "p18",
+          type: "text",
+          content: "До появления Flexbox именно inline-block часто использовался для построения простых сеток."
+        },
+
+        {
+          id: "p19",
+          type: "heading",
+          content: "Создаём секцию с карточками"
+        },
+
+        {
+          id: "p20",
+          type: "code",
+          content: `
+    <section class="features">
+
+      <div class="card">
+        <h3>Скорость</h3>
+        <p>Быстрая загрузка и оптимизированная структура.</p>
+      </div>
+
+      <div class="card">
+        <h3>Чистота кода</h3>
+        <p>Понятная архитектура и аккуратная верстка.</p>
+      </div>
+
+      <div class="card">
+        <h3>Масштабируемость</h3>
+        <p>Проект легко поддерживать и развивать.</p>
+      </div>
+
+    </section>
+    `
+        },
+
+        {
+          id: "p21",
+          type: "code",
+          content: `
+    .features {
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      width: 280px;
+      margin: 12px;
+      padding: 24px;
+      background: #18181c;
+      border-radius: 12px;
+    }
+    `
+        },
+
+        {
+          id: "p22",
+          type: "text",
+          content: "Карточки располагаются в одну строку благодаря inline-block. text-align: center используется для центрирования всей строки элементов."
+        },
+
+        {
+          id: "p23",
+          type: "heading",
+          content: "overflow — управление переполнением"
+        },
+
+        {
+          id: "p24",
+          type: "text",
+          content: "Иногда контента внутри блока больше, чем позволяет его размер. В таких случаях используется свойство overflow."
+        },
+
+        {
+          id: "p25",
+          type: "code",
+          content: `
+    .card {
+      height: 120px;
+      overflow: hidden;
+    }
+    `
+        },
+
+        {
+          id: "p26",
+          type: "text",
+          content: "overflow: hidden обрезает контент, который выходит за пределы блока."
+        },
+
+        {
+          id: "p27",
+          type: "code",
+          content: `
+    overflow: auto;
+    overflow: scroll;
+    `
+        },
+
+        {
+          id: "p28",
+          type: "text",
+          content: "auto показывает прокрутку только при необходимости. scroll отображает полосы прокрутки всегда."
+        },
+
+        {
+          id: "p29",
+          type: "heading",
+          content: "min-width и max-width"
+        },
+
+        {
+          id: "p30",
+          type: "text",
+          content: "Иногда нужно ограничить размеры элемента не одним значением, а диапазоном."
+        },
+
+        {
+          id: "p31",
+          type: "code",
+          content: `
+    .card {
+      min-width: 220px;
+      max-width: 320px;
+    }
+    `
+        },
+
+        {
+          id: "p32",
+          type: "text",
+          content: "min-width определяет минимальную ширину, меньше которой элемент не станет. max-width ограничивает максимальную ширину."
+        },
+
+        {
+          id: "p33",
+          type: "text",
+          content: "Те же свойства существуют и для высоты: min-height и max-height."
+        },
+
+        {
+          id: "p34",
+          type: "heading",
+          content: "Центрирование элементов"
+        },
+
+        {
+          id: "p35",
+          type: "text",
+          content: "В CSS существует несколько способов центрирования. Самый простой для блоков — использование margin."
+        },
+
+        {
+          id: "p36",
+          type: "code",
+          content: `
+    .block {
+      width: 300px;
+      margin: 0 auto;
+    }
+    `
+        },
+
+        {
+          id: "p37",
+          type: "text",
+          content: "auto автоматически делит свободное пространство слева и справа, поэтому элемент оказывается по центру."
+        },
+
+        {
+          id: "p38",
+          type: "text",
+          content: "Для inline и inline-block элементов используется text-align."
+        },
+
+        {
+          id: "p39",
+          type: "code",
+          content: `
+    .container {
+      text-align: center;
+    }
+    `
+        },
+
+        {
+          id: "p40",
+          type: "heading",
+          content: "Финальный пример секции"
+        },
+
+        {
+          id: "p41",
+          type: "code",
+          content: `
+    body {
+      background: #0f0f12;
+      font-family: Arial, sans-serif;
+    }
+
+    .features {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      width: 280px;
+      min-height: 160px;
+      margin: 12px;
+      padding: 24px;
+      background: #18181c;
+      border-radius: 12px;
+      color: #fff;
+      overflow: hidden;
+    }
+    `
+        },
+
+        {
+          id: "p42",
+          type: "text",
+          content: "В этом примере мы используем inline-block для расположения карточек в строку, margin для расстояния между ними и overflow для контроля переполнения."
+        }
+
+      ]
     }
   ]
 }
