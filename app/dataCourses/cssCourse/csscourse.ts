@@ -834,6 +834,351 @@ p {
         }
 
       ]
+    },
+    {
+      id: "css-4",
+      slug: "css4",
+      title: "Flexbox — основа современной верстки. Управляем расположением элементов",
+      description: "Подробно разбираем Flexbox: flex-контейнер и элементы, flex-direction, justify-content, align-items, gap и flex-wrap. Учимся управлять расположением элементов и создаём горизонтальный список карточек.",
+      duration: "Длительность 12:10",
+      videoId: "-Zi47gFc7vw?list=PLeLdJcnxYFTjiAGthA5aut347Xtyi2f9g",
+      order: 4,
+      paragraphs: [
+
+        {
+          id: "p1",
+          type: "heading",
+          content: "Flexbox — управление расположением элементов"
+        },
+
+        {
+          id: "p2",
+          type: "text",
+          content: "До этого момента мы пытались управлять расположением элементов через display, inline-block и отступы. Это работает, но требует лишних действий. Flexbox решает эту проблему — он даёт прямой контроль над тем, как элементы стоят внутри контейнера."
+        },
+
+        {
+          id: "p3",
+          type: "text",
+          content: "Теперь браузеру можно буквально сказать: «поставь элементы в ряд», «раздвинь их», «выровняй по центру». И он сделает это автоматически."
+        },
+
+        {
+          id: "p4",
+          type: "heading",
+          content: "Создаём flex-контейнер"
+        },
+
+        {
+          id: "p5",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+    }
+          `
+        },
+
+        {
+          id: "p6",
+          type: "text",
+          content: "display: flex — ключевая строка. Она превращает обычный блок в flex-контейнер. Всё, что находится внутри, автоматически становится flex-элементами."
+        },
+
+        {
+          id: "p7",
+          type: "text",
+          content: "Важно понять: Flexbox работает не с самим элементом, а с его детьми. То есть управляем мы не контейнером, а тем, как внутри него располагаются элементы."
+        },
+
+        {
+          id: "p8",
+          type: "heading",
+          content: "Первый пример"
+        },
+
+        {
+          id: "p9",
+          type: "code",
+          content: `
+    <section class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </section>
+          `
+        },
+
+        {
+          id: "p10",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+    }
+
+    .box {
+      width: 100px;       /* фиксированная ширина блока */
+      height: 100px;      /* фиксированная высота блока */
+      background: #18181c; /* тёмный фон */
+      margin: 10px;       /* отступы между блоками */
+      color: #fff;        /* белый текст */
+    }
+          `
+        },
+
+        {
+          id: "p11",
+          type: "text",
+          content: "Как только мы добавили display: flex — блоки автоматически встали в одну строку. Без inline-block, без text-align, без костылей."
+        },
+
+        {
+          id: "p12",
+          type: "heading",
+          content: "flex-direction — направление"
+        },
+
+        {
+          id: "p13",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+          `
+        },
+
+        {
+          id: "p14",
+          type: "text",
+          content: "flex-direction определяет направление оси. row — это стандартное значение, элементы идут слева направо."
+        },
+
+        {
+          id: "p15",
+          type: "code",
+          content: `
+    flex-direction: column;
+          `
+        },
+
+        {
+          id: "p16",
+          type: "text",
+          content: "Если указать column — элементы выстроятся сверху вниз. То есть ось просто поворачивается."
+        },
+
+        {
+          id: "p17",
+          type: "text",
+          content: "Здесь важно задать себе вопрос: в какую сторону должен расти интерфейс? В строку или в колонку? Flexbox всегда работает относительно этой оси."
+        },
+
+        {
+          id: "p18",
+          type: "heading",
+          content: "justify-content — распределение по основной оси"
+        },
+
+        {
+          id: "p19",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+          `
+        },
+
+        {
+          id: "p20",
+          type: "text",
+          content: "justify-content управляет тем, как элементы распределяются вдоль основной оси. center — просто центрирует их."
+        },
+
+        {
+          id: "p21",
+          type: "code",
+          content: `
+    justify-content: space-between;
+    justify-content: space-around;
+          `
+        },
+
+        {
+          id: "p22",
+          type: "text",
+          content: "space-between — прижимает элементы к краям и распределяет расстояние между ними. space-around — добавляет равные отступы вокруг каждого элемента."
+        },
+
+        {
+          id: "p23",
+          type: "heading",
+          content: "align-items — выравнивание по второй оси"
+        },
+
+        {
+          id: "p24",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+      height: 200px;
+      align-items: center;
+    }
+          `
+        },
+
+        {
+          id: "p25",
+          type: "text",
+          content: "align-items работает по поперечной оси. Если flex-direction: row — это вертикаль. center выравнивает элементы по центру контейнера по высоте."
+        },
+
+        {
+          id: "p26",
+          type: "text",
+          content: "Очень важно: justify-content и align-items работают по разным осям. Это одна из ключевых идей Flexbox."
+        },
+
+        {
+          id: "p27",
+          type: "heading",
+          content: "gap — расстояние между элементами"
+        },
+
+        {
+          id: "p28",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+          `
+        },
+
+        {
+          id: "p29",
+          type: "text",
+          content: "gap задаёт расстояние между элементами. Это современная замена margin. Больше не нужно добавлять отступы каждому элементу вручную."
+        },
+
+        {
+          id: "p30",
+          type: "heading",
+          content: "flex-wrap — перенос элементов"
+        },
+
+        {
+          id: "p31",
+          type: "code",
+          content: `
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+          `
+        },
+
+        {
+          id: "p32",
+          type: "text",
+          content: "По умолчанию элементы пытаются уместиться в одну строку. flex-wrap: wrap позволяет им переноситься на новую строку, если не хватает места."
+        },
+
+        {
+          id: "p33",
+          type: "text",
+          content: "Это особенно важно для адаптивности. Интерфейс начинает подстраиваться под ширину экрана."
+        },
+
+        {
+          id: "p34",
+          type: "heading",
+          content: "Финальный пример — горизонтальные карточки"
+        },
+
+        {
+          id: "p35",
+          type: "code",
+          content: `
+    <section class="cards">
+
+      <div class="card">
+        <h3>Скорость</h3>
+        <p>Быстрые и оптимизированные сайты.</p>
+      </div>
+
+      <div class="card">
+        <h3>Чистота</h3>
+        <p>Понятная структура и аккуратный код.</p>
+      </div>
+
+      <div class="card">
+        <h3>Масштаб</h3>
+        <p>Проекты легко развивать.</p>
+      </div>
+
+    </section>
+          `
+        },
+
+        {
+          id: "p36",
+          type: "code",
+          content: `
+    body {
+      background: #0f0f12; /* общий тёмный фон страницы */
+      font-family: Arial, sans-serif; /* базовый шрифт */
+    }
+
+    .cards {
+      display: flex;            /* включаем Flexbox */
+      gap: 20px;               /* расстояние между карточками */
+      justify-content: center; /* центрируем по горизонтали */
+      flex-wrap: wrap;         /* разрешаем перенос */
+      padding: 40px;           /* внутренние отступы секции */
+    }
+
+    .card {
+      width: 260px;                     /* фиксированная ширина карточки */
+      padding: 20px;                   /* внутренние отступы */
+      background: #18181c;             /* цвет карточки */
+      border-radius: 12px;             /* скругление углов */
+      color: #fff;                     /* цвет текста */
+    }
+          `
+        },
+
+        {
+          id: "p37",
+          type: "text",
+          content: "Здесь Flexbox делает почти всю работу: выстраивает карточки в ряд, добавляет расстояние между ними, центрирует и переносит на новую строку при необходимости."
+        },
+
+        {
+          id: "p38",
+          type: "heading",
+          content: "Итог"
+        },
+
+        {
+          id: "p39",
+          type: "text",
+          content: "Flexbox — это инструмент, который убирает сложность из верстки. Вместо того чтобы бороться с расположением элементов, вы просто описываете поведение, а браузер делает всё остальное."
+        },
+
+        {
+          id: "p40",
+          type: "text",
+          content: "Теперь вы умеете управлять направлением, выравниванием, расстоянием и переносом элементов. Это уже уровень реальной верстки."
+        }
+
+      ]
     }
   ]
 }
